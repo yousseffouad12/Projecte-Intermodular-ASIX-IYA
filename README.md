@@ -14,9 +14,11 @@ tecnologies en una solució real.
 
 ## 👥 Integrants de l'equip
 
--   **Izan Ruiz Pérez**
--   **Youssef Fouad Mabrouki**
--   **Aria Rodríguez Estrella**
+**Izan Ruiz Pérez**
+🌐 Portfoli: https://izaanruiz.github.io/Portfoli/
+**Youssef Fouad Mabrouki**
+🌐 Portfoli: https://yousseffouad12.github.io/youssef_cv/
+**Aria Rodríguez Estrella**
 
 Treballem conjuntament en la planificació, disseny, implementació i
 documentació del projecte.
