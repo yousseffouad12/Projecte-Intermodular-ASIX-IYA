@@ -23,57 +23,9 @@ documentació del projecte.
 
 ------------------------------------------------------------------------
 
-## 🎯 Objectiu del projecte
-
-L'objectiu principal és:
-
--   Integrar coneixements de sistemes, xarxes i serveis.
--   Dissenyar i implementar una infraestructura funcional.
--   Aplicar bones pràctiques de seguretat i administració.
--   Documentar tot el procés de manera professional.
-
-Aquest repositori conté tota la documentació, configuracions i recursos
-relacionats amb el desenvolupament del projecte.
-
-------------------------------------------------------------------------
-
-## 🛠️ Tecnologies i coneixements aplicats
-
-Durant el projecte treballem amb:
-
--   Administració de sistemes Linux i/o Windows\
--   Xarxes i serveis\
--   Virtualització\
--   Seguretat informàtica\
--   Automatització i scripts\
--   Documentació tècnica
-
-*(Aquesta secció es pot actualitzar segons l'evolució del projecte.)*
-
-------------------------------------------------------------------------
-
-## 📂 Estructura del repositori
-
-El repositori inclou:
-
--   📄 Documentació tècnica\
--   ⚙️ Configuracions\
--   🧪 Proves i resultats\
--   📊 Memòria del projecte
-
-------------------------------------------------------------------------
-
 ## 📌 Estat del projecte
 
 🟡 En desenvolupament
-
-------------------------------------------------------------------------
-
-## 🤝 Compromís
-
-Ens comprometem a desenvolupar aquest projecte amb professionalitat,
-treball en equip i aplicant els coneixements adquirits durant el cicle
-formatiu d'ASIX.
 
 ------------------------------------------------------------------------
 
