@@ -11,12 +11,14 @@ Aquest projecte representa l'aplicació pràctica de tots els coneixements adqui
 ## 👥 Integrants de l'equip
 
 ### 🧑‍💻 Izan Ruiz Pérez  
-🌐 **Portfoli:** [https://izaanruiz.github.io/Portfoli/](https://izaanruiz.github.io/Portfoli/)
+🌐 **Portfoli:** [Portfoli](https://izaanruiz.github.io/Portfoli/)
 
 ### 🧑‍💻 Youssef Fouad Mabrouki  
-🌐 **Portfoli:** [https://yousseffouad12.github.io/youssef_cv/](https://yousseffouad12.github.io/youssef_cv/)
+🌐 **Portfoli:** [Portfoli](https://yousseffouad12.github.io/youssef_cv/)
 
 ### 🧑‍💻 Aria Rodríguez Estrella  
+🌐 **Portfoli:** [Portfoli](https://adriiiii.github.io/cv-estrella/)
+
 
 Treballem conjuntament en la planificació, disseny, implementació i documentació del projecte.
 
@@ -25,7 +27,3 @@ Treballem conjuntament en la planificació, disseny, implementació i documentac
 ## 📌 Estat del projecte
 
 🟡 **En desenvolupament**
-
----
-
-⭐ Gràcies per visitar el nostre repositori! ⭐
