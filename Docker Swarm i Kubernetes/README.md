@@ -1,6 +1,5 @@
 # Orquestradors: Docker Swarm i Kubernetes
-<img Docker Swarm i Kubernetes/img/Docker kuber.jpg
-
+https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/f3bb578b900e15cb3a4e6b9fa76e0b23517c19a6/Docker%20Swarm%20i%20Kubernetes/img/Docker%20kuber.jpg 
 **Izan Ruiz, Adria Rodriguez, Youssef Fouad**
 
 ---
