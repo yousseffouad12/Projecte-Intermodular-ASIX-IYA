@@ -57,6 +57,8 @@ Mentre que docker run és ideal per a contenidors aïllats, el Compose permet ge
 ### 2. Disseny de l'arquitectura
 Hem dissenyat una arquitectura basada en microserveis seguint els requeriments del cas d'ús. El sistema es divideix en dues xarxes lògiques: frontend-net (pública) i backend-net (privada).
 
+<img src="./img/Screenshot_2.png" width="550">
+
 **Explicació:** El diagrama mostra el flux de dades des de l'usuari cap al frontend. L' api-gateway actua com a punt d'entrada únic cap als microserveis de negoci. Es pot observar com el servei de comandes (order-service) interactua amb la base de dades, el sistema de memòria cau i la cua de missatgeria per notificar esdeveniments de forma asíncrona.
 
 ### 3. Creació i configuració del fitxer index.html
