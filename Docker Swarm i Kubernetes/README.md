@@ -85,6 +85,7 @@ Finalment, per confirmar que tot funciona correctament, accedim a la plataforma.
 
 <img src="./img/Screenshot_10.png" width="800">
 
+---
 
 ## Fase 2: Docker Swarm — Clúster d'Alta Disponibilitat
 
@@ -132,6 +133,7 @@ Hem simulat una fallada crítica aturant el servei de Docker al node swarm-worke
 
 ### 6. Escalat en calent
 Hem realitzat un escalat horitzontal del microservei product-service augmentant el nombre de rèpliques de 2 a 4. El procés s'ha realitzat sense temps d'aturada.
+
 <img src="./img/Screenshot_26.png" width="600">
 
 ---
