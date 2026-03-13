@@ -67,6 +67,9 @@ Hem creat un fitxer index.html per personalitzar la interfície de la botiga Sho
 
 ### 4. Creació i configuració del fitxer docker-compose.yml
 Hem programat un fitxer docker-compose.yml que aixeca els 10 contenidors necessaris. S'han configurat Healthchecks específics per a les bases de dades i el RabbitMQ per evitar que els microserveis intentin connectar-se abans que els serveis d'infraestructura estiguin totalment operatius (service_healthy).
+<img src="./img/Screenshot_4.png" width="550">  <img src="./img/Screenshot_5.png" width="300">
+<img src="./img/Screenshot_6.png" width="250">
+
 
 ### 5. Desplegament i verificació del sistema
 Per al desplegament de l'entorn, hem utilitzat la comanda docker compose up -d. Un cop finalitzat el procés.
