@@ -84,7 +84,7 @@ Per verificar la integritat de tots els serveis amb la comanda docker compose ps
 Finalment, per confirmar que tot funciona correctament, accedim a la plataforma.
 
 <img src="./img/Screenshot_10.png" width="800">
----
+
 
 ## Fase 2: Docker Swarm — Clúster d'Alta Disponibilitat
 
