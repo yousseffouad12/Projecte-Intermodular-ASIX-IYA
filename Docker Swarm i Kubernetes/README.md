@@ -126,8 +126,8 @@ S'observa la distribució dels contenidors entre els nodes swarm-manager, worker
 
 ### 5. Prova de tolerància a fallades
 Hem simulat una fallada crítica aturant el servei de Docker al node swarm-worker-2. L'orquestrador Swarm ha detectat la caiguda del node en pocs segons i ha reprogramat automàticament les instàncies afectades cap als nodes actius, garantint que el servei no s'aturi en cap moment.
-<img src="./img/Screenshot_23.png" width="300">
-<img src="./img/Screenshot_24.png" width="500">
+<img src="./img/Screenshot_23.png" width="400">
+<img src="./img/Screenshot_24.png" width="600">
 <img src="./img/Screenshot_25.png" width="700">
 
 ### 6. Escalat en calent
