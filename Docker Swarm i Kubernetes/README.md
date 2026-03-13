@@ -1,5 +1,5 @@
 # Orquestradors: Docker Swarm i Kubernetes
-<img src="./img/Screenshot_1.png" width="1000">
+<img src="./img/Screenshot_1.png" width="850">
 
 **Izan Ruiz, Adria Rodriguez, Youssef Fouad**
 
