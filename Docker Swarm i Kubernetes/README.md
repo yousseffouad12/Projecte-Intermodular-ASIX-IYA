@@ -105,6 +105,8 @@ Per al muntatge del clúster d'alta disponibilitat, hem desplegat tres màquines
 
 ### 2. Inicialització del clúster Swarm
 Hem inicialitzat el clúster a través de la interfície de xarxa interna (10.0.0.10) per garantir la seguretat del trànsit de gestió. Els nodes treballadors s'han unit mitjançant un token de seguretat.
+<img src="./img/Screenshot_16.png" width="700">
+<img src="./img/Screenshot_17.png" width="700">
 
 ### 3. Creació del fitxer docker-stack.yml
 S'ha creat el fitxer docker-stack.yml. S'han configurat 2 rèpliques per als serveis d'API i gateway per garantir la tolerància a fallades, i s'han definit xarxes de tipus overlay.
