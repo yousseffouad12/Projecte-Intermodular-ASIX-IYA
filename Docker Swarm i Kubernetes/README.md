@@ -79,11 +79,11 @@ Per al desplegament de l'entorn, hem utilitzat la comanda docker compose up -d. 
 
 Per verificar la integritat de tots els serveis amb la comanda docker compose ps.
 
-<img src="./img/Screenshot_9.png" width="300">
+<img src="./img/Screenshot_9.png" width="700">
 
 Finalment, per confirmar que tot funciona correctament, accedim a la plataforma.
 
-<img src="./img/Screenshot_10.png" width="550">
+<img src="./img/Screenshot_10.png" width="650">
 ---
 
 ## Fase 2: Docker Swarm — Clúster d'Alta Disponibilitat
