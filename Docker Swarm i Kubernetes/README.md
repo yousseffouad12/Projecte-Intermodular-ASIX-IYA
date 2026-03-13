@@ -101,6 +101,7 @@ Per al muntatge del clúster d'alta disponibilitat, hem desplegat tres màquines
 <img src="./img/Screenshot_14.png" width="700">
 
 - **swarm-worker-2:**
+<img src="./img/Screenshot_15.png" width="700">
 
 ### 2. Inicialització del clúster Swarm
 Hem inicialitzat el clúster a través de la interfície de xarxa interna (10.0.0.10) per garantir la seguretat del trànsit de gestió. Els nodes treballadors s'han unit mitjançant un token de seguretat.
