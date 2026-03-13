@@ -111,10 +111,11 @@ Hem inicialitzat el clúster a través de la interfície de xarxa interna (10.0.
 ### 3. Creació del fitxer docker-stack.yml
 S'ha creat el fitxer docker-stack.yml. S'han configurat 2 rèpliques per als serveis d'API i gateway per garantir la tolerància a fallades, i s'han definit xarxes de tipus overlay.
 
-<img src="./img/Screenshot_18.png" width="150">   <img src="./img/Screenshot_19.png" width="200">
+<img src="./img/Screenshot_18.png" width="250">   <img src="./img/Screenshot_19.png" width="300">
 
 ### 4. Desplegament i verificació dels serveis
 Un cop configurat el fitxer, hem procedit al desplegament del stack anomenat shopmicro. Swarm s'ha encarregat de descarregar les imatges a tots els nodes i repartir els contenidors.
+<img src="./img/Screenshot_20.png" width="700">
 
 En aquesta captura es pot observar com la columna REPLICAS mostra, per exemple, 2/2 en els serveis escalats, indicant que Swarm ha aixecat correctament totes les instàncies demanades.
 
