@@ -63,7 +63,7 @@ Hem dissenyat una arquitectura basada en microserveis seguint els requeriments d
 
 ### 3. Creació i configuració del fitxer index.html
 Hem creat un fitxer index.html per personalitzar la interfície de la botiga ShopMicro.
-<img src="./img/Screenshot_3.png" width="600">
+<img src="./img/Screenshot_3.png" width="800">
 
 ### 4. Creació i configuració del fitxer docker-compose.yml
 Hem programat un fitxer docker-compose.yml que aixeca els 10 contenidors necessaris. S'han configurat Healthchecks específics per a les bases de dades i el RabbitMQ per evitar que els microserveis intentin connectar-se abans que els serveis d'infraestructura estiguin totalment operatius (service_healthy).
