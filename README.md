@@ -1,6 +1,6 @@
-# 🚀 Projecte Intermodular – ASIX
+# Projecte Intermodular – ASIX
 
-## 👨‍💻 Qui som?
+## Qui som?
 
 Som estudiants de **2n curs del Cicle Formatiu de Grau Superior d'Administració de Sistemes Informàtics en Xarxa (ASIX)** i estem desenvolupant el nostre **Projecte Intermodular Final**.
 
@@ -24,6 +24,6 @@ Treballem conjuntament en la planificació, disseny, implementació i documentac
 
 ---
 
-## 📌 Estat del projecte
+## Estat del projecte
 
 🟡 **En desenvolupament**
