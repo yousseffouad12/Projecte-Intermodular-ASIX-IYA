@@ -115,7 +115,8 @@ S'ha creat el fitxer docker-stack.yml. S'han configurat 2 rèpliques per als ser
 
 ### 4. Desplegament i verificació dels serveis
 Un cop configurat el fitxer, hem procedit al desplegament del stack anomenat shopmicro. Swarm s'ha encarregat de descarregar les imatges a tots els nodes i repartir els contenidors.
-<img src="./img/Screenshot_20.png" width="700">
+
+<img src="./img/Screenshot_20.png" width="600">
 
 En aquesta captura es pot observar com la columna REPLICAS mostra, per exemple, 2/2 en els serveis escalats, indicant que Swarm ha aixecat correctament totes les instàncies demanades.
 
