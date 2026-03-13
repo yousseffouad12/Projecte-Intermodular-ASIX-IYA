@@ -91,6 +91,8 @@ Finalment, per confirmar que tot funciona correctament, accedim a la plataforma.
 ### 1. Infraestructura i configuració de xarxa
 Per al muntatge del clúster d'alta disponibilitat, hem desplegat tres màquines virtuals amb Ubuntu Server 22.04. Hem optat per una configuració de xarxa de doble interfície:
 
+<img src="./img/Screenshot_11.png" width="800">
+
 - **swarm-manager:**
 - **swarm-worker-1:**
 - **swarm-worker-2:**
