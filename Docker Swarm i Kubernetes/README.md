@@ -94,6 +94,8 @@ Per al muntatge del clúster d'alta disponibilitat, hem desplegat tres màquines
 <img src="./img/Screenshot_11.png" width="200">
 
 - **swarm-manager:**
+<img src="./img/Screenshot_12.png" width="400">
+
 - **swarm-worker-1:**
 - **swarm-worker-2:**
 
