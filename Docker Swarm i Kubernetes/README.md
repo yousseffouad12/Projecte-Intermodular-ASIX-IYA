@@ -75,7 +75,7 @@ Hem programat un fitxer docker-compose.yml que aixeca els 10 contenidors necessa
 ### 5. Desplegament i verificació del sistema
 Per al desplegament de l'entorn, hem utilitzat la comanda docker compose up -d. Un cop finalitzat el procés.
 
-<img src="./img/Screenshot_7.png" width="450">  <img src="./img/Screenshot_8.png" width="450">
+<img src="./img/Screenshot_7.png" width="400">  <img src="./img/Screenshot_8.png" width="450">
 
 Per verificar la integritat de tots els serveis amb la comanda docker compose ps.
 Finalment, per confirmar que tot funciona correctament, accedim a la plataforma.
