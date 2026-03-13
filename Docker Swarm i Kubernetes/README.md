@@ -121,7 +121,7 @@ Un cop configurat el fitxer, hem procedit al desplegament del stack anomenat sho
 <img src="./img/Screenshot_21.png" width="600">
 En aquesta captura es pot observar com la columna REPLICAS mostra, per exemple, 2/2 en els serveis escalats, indicant que Swarm ha aixecat correctament totes les instàncies demanades.
 
-<img src="./img/Screenshot_22.png" width="600">
+<img src="./img/Screenshot_22.png" width="700">
 S'observa la distribució dels contenidors entre els nodes swarm-manager, worker-1 i worker-2. Es confirma que les bases de dades estan al manager i la resta de serveis repartits pel clúster.
 
 ### 5. Prova de tolerància a fallades
