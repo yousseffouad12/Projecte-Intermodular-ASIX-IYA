@@ -143,6 +143,8 @@ Hem realitzat un escalat horitzontal del microservei product-service augmentant 
 ### 1. Anàlisi de vulnerabilitats
 Hem realitzat una auditoria del fitxer docker-stack.yml utilitzat a la Fase 2 i hem detectat una vulnerabilitat crítica: les credencials de les bases de dades (MYSQL_ROOT_PASSWORD) estan escrites en text pla. Qualsevol persona amb accés al fitxer podria comprometre la seguretat de les dades.
 
+<img src="./img/Screenshot_27.png" width="500">
+
 ### 2. Migració a Docker Secrets
 Per protegir les credencials, farem servir el gestor de secrets natiu de Docker Swarm, que emmagatzema la informació xifrada en el clúster.
 
