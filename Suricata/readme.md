@@ -1,3 +1,6 @@
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://semver.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]()
 # 🛡️ Implementació d'IDS/IPS amb Suricata sobre pfSense
 
 Aquest repositori conté la documentació, configuració i resultats del projecte final d'implementació d'un **Sistema de Detecció i Prevenció d'Intrusions (IDS/IPS)** basat en **Suricata** actuant sobre un tallafocs **pfSense**.
