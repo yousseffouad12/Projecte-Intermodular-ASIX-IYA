@@ -1,0 +1,79 @@
+<svg width="780" height="200" viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'Courier New', monospace; }
+  </style>
+  <rect width="780" height="200" fill="#0a0e14"/>
+  <defs>
+    <pattern id="g2" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,255,136,0.03)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="780" height="200" fill="url(#g2)"/>
+  <text x="390" y="22" text-anchor="middle" font-size="10" fill="rgba(0,255,136,0.4)" letter-spacing="4">ATTACK VECTOR MATRIX</text>
+
+  <!-- 1. Nmap -->
+  <rect x="14" y="35" width="114" height="152" rx="5" fill="rgba(255,68,68,0.05)" stroke="rgba(255,68,68,0.35)" stroke-width="1"/>
+  <rect x="14" y="35" width="114" height="20" rx="5" fill="rgba(255,68,68,0.15)"/>
+  <text x="71" y="49" text-anchor="middle" font-size="8" fill="rgba(255,68,68,0.9)" font-weight="bold">NMAP SCAN</text>
+  <text x="71" y="82" text-anchor="middle" font-size="24" fill="rgba(255,68,68,0.2)">⌖</text>
+  <text x="71" y="112" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">NULL / SYN / FIN</text>
+  <text x="71" y="124" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">Port recon</text>
+  <rect x="24" y="144" width="94" height="16" rx="3" fill="rgba(255,68,68,0.15)" stroke="rgba(255,68,68,0.4)" stroke-width="0.8"/>
+  <text x="71" y="155" text-anchor="middle" font-size="7.5" fill="#ff4444">✕  BLOCKED</text>
+  <text x="71" y="175" text-anchor="middle" font-size="6" fill="rgba(255,68,68,0.4)">ET SCAN User-Agent</text>
+
+  <!-- 2. Hydra -->
+  <rect x="144" y="35" width="114" height="152" rx="5" fill="rgba(255,136,0,0.05)" stroke="rgba(255,136,0,0.35)" stroke-width="1"/>
+  <rect x="144" y="35" width="114" height="20" rx="5" fill="rgba(255,136,0,0.15)"/>
+  <text x="201" y="49" text-anchor="middle" font-size="8" fill="rgba(255,136,0,0.9)" font-weight="bold">HYDRA SSH</text>
+  <text x="201" y="82" text-anchor="middle" font-size="24" fill="rgba(255,136,0,0.2)">⚷</text>
+  <text x="201" y="112" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">Brute Force</text>
+  <text x="201" y="124" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">Port 22 / SSH</text>
+  <rect x="154" y="144" width="94" height="16" rx="3" fill="rgba(255,136,0,0.15)" stroke="rgba(255,136,0,0.4)" stroke-width="0.8"/>
+  <text x="201" y="155" text-anchor="middle" font-size="7.5" fill="#ff8800">✕  BLOCKED</text>
+  <text x="201" y="175" text-anchor="middle" font-size="6" fill="rgba(255,136,0,0.4)">SID:1000011 threshold</text>
+
+  <!-- 3. hping3 -->
+  <rect x="274" y="35" width="114" height="152" rx="5" fill="rgba(255,204,0,0.05)" stroke="rgba(255,204,0,0.35)" stroke-width="1"/>
+  <rect x="274" y="35" width="114" height="20" rx="5" fill="rgba(255,204,0,0.15)"/>
+  <text x="331" y="49" text-anchor="middle" font-size="8" fill="rgba(255,204,0,0.9)" font-weight="bold">SYN FLOOD</text>
+  <text x="331" y="82" text-anchor="middle" font-size="24" fill="rgba(255,204,0,0.2)">≋</text>
+  <text x="331" y="112" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">hping3 --flood</text>
+  <text x="331" y="124" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">119k pkts/s DoS</text>
+  <rect x="284" y="144" width="94" height="16" rx="3" fill="rgba(255,204,0,0.15)" stroke="rgba(255,204,0,0.4)" stroke-width="0.8"/>
+  <text x="331" y="155" text-anchor="middle" font-size="7.5" fill="#ffcc00">✕  BLOCKED</text>
+  <text x="331" y="175" text-anchor="middle" font-size="6" fill="rgba(255,204,0,0.4)">ET DOS SYN Flood</text>
+
+  <!-- 4. sqlmap -->
+  <rect x="404" y="35" width="114" height="152" rx="5" fill="rgba(136,68,255,0.05)" stroke="rgba(136,68,255,0.35)" stroke-width="1"/>
+  <rect x="404" y="35" width="114" height="20" rx="5" fill="rgba(136,68,255,0.15)"/>
+  <text x="461" y="49" text-anchor="middle" font-size="8" fill="rgba(136,68,255,0.9)" font-weight="bold">SQL INJECT</text>
+  <text x="461" y="82" text-anchor="middle" font-size="24" fill="rgba(136,68,255,0.2)">⌗</text>
+  <text x="461" y="112" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">sqlmap Layer 7</text>
+  <text x="461" y="124" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">OR '1'='1 DPI</text>
+  <rect x="414" y="144" width="94" height="16" rx="3" fill="rgba(136,68,255,0.15)" stroke="rgba(136,68,255,0.4)" stroke-width="0.8"/>
+  <text x="461" y="155" text-anchor="middle" font-size="7.5" fill="#8844ff">✕  BLOCKED</text>
+  <text x="461" y="175" text-anchor="middle" font-size="6" fill="rgba(136,68,255,0.4)">DPI + SID:1000010</text>
+
+  <!-- 5. Nikto/DIRB -->
+  <rect x="534" y="35" width="114" height="152" rx="5" fill="rgba(0,204,255,0.05)" stroke="rgba(0,204,255,0.35)" stroke-width="1"/>
+  <rect x="534" y="35" width="114" height="20" rx="5" fill="rgba(0,204,255,0.15)"/>
+  <text x="591" y="49" text-anchor="middle" font-size="8" fill="rgba(0,204,255,0.9)" font-weight="bold">WEB SCAN</text>
+  <text x="591" y="82" text-anchor="middle" font-size="24" fill="rgba(0,204,255,0.2)">⌕</text>
+  <text x="591" y="112" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">Nikto / DIRB</text>
+  <text x="591" y="124" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">HTTP anomalies</text>
+  <rect x="544" y="144" width="94" height="16" rx="3" fill="rgba(0,204,255,0.15)" stroke="rgba(0,204,255,0.4)" stroke-width="0.8"/>
+  <text x="591" y="155" text-anchor="middle" font-size="7.5" fill="#00ccff">✕  DETECTED</text>
+  <text x="591" y="175" text-anchor="middle" font-size="6" fill="rgba(0,204,255,0.4)">HTTP Host invalid</text>
+
+  <!-- 6. wafw00f -->
+  <rect x="658" y="35" width="110" height="152" rx="5" fill="rgba(0,255,136,0.05)" stroke="rgba(0,255,136,0.35)" stroke-width="1"/>
+  <rect x="658" y="35" width="110" height="20" rx="5" fill="rgba(0,255,136,0.15)"/>
+  <text x="713" y="49" text-anchor="middle" font-size="8" fill="rgba(0,255,136,0.9)" font-weight="bold">WAFW00F</text>
+  <text x="713" y="82" text-anchor="middle" font-size="24" fill="rgba(0,255,136,0.2)">⊙</text>
+  <text x="713" y="112" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">Fingerprinting</text>
+  <text x="713" y="124" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">WAF detection</text>
+  <rect x="668" y="144" width="90" height="16" rx="3" fill="rgba(0,255,136,0.15)" stroke="rgba(0,255,136,0.4)" stroke-width="0.8"/>
+  <text x="713" y="155" text-anchor="middle" font-size="7.5" fill="#00ff88">IPS CONFIRMED</text>
+  <text x="713" y="175" text-anchor="middle" font-size="6" fill="rgba(0,255,136,0.4)">pkt/connection level</text>
+</svg>

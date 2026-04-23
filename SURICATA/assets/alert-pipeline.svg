@@ -1,0 +1,55 @@
+<svg width="780" height="120" viewBox="0 0 780 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'Courier New', monospace; }
+  </style>
+  <rect width="780" height="120" fill="#0a0e14"/>
+  <defs>
+    <pattern id="g3" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,255,136,0.03)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="780" height="120" fill="url(#g3)"/>
+  <text x="390" y="18" text-anchor="middle" font-size="9" fill="rgba(0,255,136,0.4)" letter-spacing="4">DETECTION → LOG → ALERT PIPELINE</text>
+
+  <!-- Step 1 -->
+  <rect x="14" y="28" width="120" height="72" rx="5" fill="rgba(255,68,68,0.05)" stroke="rgba(255,68,68,0.3)" stroke-width="1"/>
+  <text x="74" y="58" text-anchor="middle" font-size="22" fill="rgba(255,68,68,0.3)">⚡</text>
+  <text x="74" y="78" text-anchor="middle" font-size="8" fill="rgba(255,68,68,0.7)" font-weight="bold">Network Traffic</text>
+  <text x="74" y="91" text-anchor="middle" font-size="7" fill="rgba(255,68,68,0.4)">WAN / LAN</text>
+
+  <line x1="136" y1="64" x2="154" y2="64" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <polygon points="154,59 164,64 154,69" fill="rgba(0,255,136,0.5)"/>
+
+  <!-- Step 2 -->
+  <rect x="166" y="28" width="120" height="72" rx="5" fill="rgba(68,136,255,0.05)" stroke="rgba(68,136,255,0.3)" stroke-width="1"/>
+  <text x="226" y="58" text-anchor="middle" font-size="22" fill="rgba(68,136,255,0.3)">◈</text>
+  <text x="226" y="78" text-anchor="middle" font-size="8" fill="rgba(68,136,255,0.7)" font-weight="bold">Suricata DPI</text>
+  <text x="226" y="91" text-anchor="middle" font-size="7" fill="rgba(68,136,255,0.4)">Layer 7 analysis</text>
+
+  <line x1="288" y1="64" x2="306" y2="64" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <polygon points="306,59 316,64 306,69" fill="rgba(0,255,136,0.5)"/>
+
+  <!-- Step 3 -->
+  <rect x="318" y="28" width="120" height="72" rx="5" fill="rgba(255,204,0,0.05)" stroke="rgba(255,204,0,0.3)" stroke-width="1"/>
+  <text x="378" y="56" text-anchor="middle" font-size="20" fill="rgba(255,204,0,0.3)">{  }</text>
+  <text x="378" y="78" text-anchor="middle" font-size="8" fill="rgba(255,204,0,0.7)" font-weight="bold">EVE JSON Log</text>
+  <text x="378" y="91" text-anchor="middle" font-size="7" fill="rgba(255,204,0,0.4)">/var/log/suricata</text>
+
+  <line x1="440" y1="64" x2="458" y2="64" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <polygon points="458,59 468,64 458,69" fill="rgba(0,255,136,0.5)"/>
+
+  <!-- Step 4 -->
+  <rect x="470" y="28" width="120" height="72" rx="5" fill="rgba(136,68,255,0.05)" stroke="rgba(136,68,255,0.3)" stroke-width="1"/>
+  <text x="530" y="58" text-anchor="middle" font-size="22" fill="rgba(136,68,255,0.3)">⌥</text>
+  <text x="530" y="78" text-anchor="middle" font-size="8" fill="rgba(136,68,255,0.7)" font-weight="bold">PHP + Cron</text>
+  <text x="530" y="91" text-anchor="middle" font-size="7" fill="rgba(136,68,255,0.4)">Every 1 minute</text>
+
+  <line x1="592" y1="64" x2="610" y2="64" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <polygon points="610,59 620,64 610,69" fill="rgba(0,255,136,0.5)"/>
+
+  <!-- Step 5 -->
+  <rect x="622" y="28" width="144" height="72" rx="5" fill="rgba(0,255,136,0.05)" stroke="rgba(0,255,136,0.4)" stroke-width="1"/>
+  <text x="694" y="58" text-anchor="middle" font-size="22" fill="rgba(0,255,136,0.3)">✉</text>
+  <text x="694" y="78" text-anchor="middle" font-size="8" fill="rgba(0,255,136,0.8)" font-weight="bold">Telegram Alert</text>
+  <text x="694" y="91" text-anchor="middle" font-size="7" fill="rgba(0,255,136,0.4)">Real-time mobile</text>
+</svg>

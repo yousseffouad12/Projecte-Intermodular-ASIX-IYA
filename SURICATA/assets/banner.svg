@@ -1,0 +1,27 @@
+<svg width="780" height="100" viewBox="0 0 780 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'Courier New', monospace; }
+  </style>
+  <rect width="780" height="100" fill="#0a0e14"/>
+  <!-- Corner brackets -->
+  <path d="M16,16 L16,8 L24,8" fill="none" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <path d="M764,16 L764,8 L756,8" fill="none" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <path d="M16,84 L16,92 L24,92" fill="none" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <path d="M764,84 L764,92 L756,92" fill="none" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <!-- Top scan line -->
+  <line x1="30" y1="8" x2="750" y2="8" stroke="rgba(0,255,136,0.1)" stroke-width="0.5"/>
+  <line x1="30" y1="92" x2="750" y2="92" stroke="rgba(0,255,136,0.1)" stroke-width="0.5"/>
+  <!-- Main title -->
+  <text x="390" y="48" text-anchor="middle" font-size="32" fill="#00ff88" font-weight="bold" letter-spacing="6" opacity="0.95">IDS/IPS SURICATA</text>
+  <!-- Glow effect via second text -->
+  <text x="390" y="48" text-anchor="middle" font-size="32" fill="none" stroke="#00ff88" stroke-width="0.5" letter-spacing="6" opacity="0.3">IDS/IPS SURICATA</text>
+  <!-- Subtitle -->
+  <text x="390" y="70" text-anchor="middle" font-size="10" fill="rgba(0,255,136,0.45)" letter-spacing="8">pfSense  ·  Kali Linux  ·  Emerging Threats</text>
+  <!-- Status dots -->
+  <circle cx="310" cy="85" r="3" fill="rgba(0,255,136,0.7)"/>
+  <text x="320" y="88" font-size="8" fill="rgba(0,255,136,0.5)">ACTIVE</text>
+  <circle cx="380" cy="85" r="3" fill="rgba(255,68,68,0.7)"/>
+  <text x="390" y="88" font-size="8" fill="rgba(255,68,68,0.5)">BLOCKING</text>
+  <circle cx="460" cy="85" r="3" fill="rgba(255,204,0,0.7)"/>
+  <text x="470" y="88" font-size="8" fill="rgba(255,204,0,0.5)">LOGGING</text>
+</svg>
