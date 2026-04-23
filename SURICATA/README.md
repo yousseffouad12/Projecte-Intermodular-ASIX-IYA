@@ -31,8 +31,7 @@
 
 ## 🛡️ Implementació d'IDS/IPS amb Suricata sobre pfSense
 
-Projecte acadèmic de ciberseguretat que demostra la implementació d'un sistema de **Detecció i Prevenció d'Intrusions** sobre un tallafocs pfSense, amb proves de pentesting reals des de Kali Linux.
-
+Projecte acadèmic de ASIX2 que demostra la implementació d'un sistema de **Detecció i Prevenció d'Intrusions** sobre un tallafocs pfSense.
 ---
 
 ## 📑 Índex
@@ -83,13 +82,13 @@ Categories ET Open actives seleccionades estratègicament:
 - `emerging-malware.rules` / `emerging-botcc.rules` — C&C i codi maliciós
 - `emerging-web_server.rules` / `emerging-exploit.rules` — Injecció i exploits
 
-Regles personalitzades (SID 1000010–1000013):
-- Brute Force SSH amb threshold
-- Protocols insegurs (Telnet port 23)
-- Inundació ICMP i SQL Injection Layer 7
+Regles personalitzades:
+- Brute Force SSH
+- Protocols insegurs
+- Inundació ICMP i SQL Injection 
 
 ### 3. Logs Estructurats EVE JSON
-Format estructurat clau-valor fins a la **Capa 7**, preparat per integrar-se amb SIEM (Elastic Stack, Zabbix).
+Format estructurat clau-valor preparat per integrar-se amb SIEM (Zabbix).
 
 ### 4. Pass List Anti-Lockout
 Llista `Admin_Pass` que exclou les IPs de gestió del motor IPS per evitar autobloquejos.
@@ -98,7 +97,7 @@ Llista `Admin_Pass` que exclou les IPs de gestió del motor IPS per evitar autob
 
 ## ⚔️ Auditoria i Pentesting (Casos d'Ús)
 
-### LAN Pentesting (192.168.10.105 → 192.168.10.1)
+### LAN Pentesting amb **KALI linux** (192.168.10.105 → 192.168.10.1)
 
 | Prova | Eina | Comanda | Resultat IPS |
 |:---|:---|:---|:---|
@@ -110,7 +109,7 @@ Llista `Admin_Pass` que exclou les IPs de gestió del motor IPS per evitar autob
 | Protocol insegur | `Telnet` | `telnet 192.168.10.1` | ✕ `SID:1000012` |
 | ICMP oversized | `ping` | `ping -s 2000` | ✕ `SID:1000013` flood |
 
-### WAN Pentesting (10.93.255.105 → 10.93.255.38)
+### WAN Pentesting amb **KALI linux** (10.93.255.105 → 10.93.255.38)
 
 | Prova | Eina | Comanda | Resultat IPS |
 |:---|:---|:---|:---|
@@ -149,7 +148,7 @@ Script PHP (`/root/suricata_telegram.php`) executat per **Cron cada minut**:
 | 4. Erradicació | Escaneig antivirus, canvi de contrasenyes, actualitzar SO. |
 | 5. Documentació | Registrar incident. Ajustar regles (tuning). |
 
-### DNS Sinkholing amb pfBlockerNG
+### DNS block amb pfBlockerNG
 
 Redirigeix dominis maliciosos i llistes personalitzades a Virtual IP `10.10.10.1`, bloquejant la navegació **abans** que la petició surti a Internet.
 
@@ -170,13 +169,13 @@ Llistes personalitzades actives: `facebook.com`, `tiktok.com`, `bet365.com`, `ro
 
 ---
 
-## 👥 Autors i Context Acadèmic
+## 👥 Autors
 
 | Camp | Detall |
 |:---|:---|
 | **Mòdul** | M0379 - Miniprojectes |
 | **Grau** | ASIX 2 — Administració de Sistemes Informàtics en Xarxa |
-| **Autors** | Izan Ruiz · Youssef Fouad · Adrià Rodríguez |
+| **Autors** | Youssef Fouad · Izan Ruiz · Adrià Rodríguez |
 | **Institut** | INS Sa Palomera |
 | **Curs** | 2025 – 2026 |
 
