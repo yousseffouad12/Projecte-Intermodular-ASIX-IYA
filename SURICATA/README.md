@@ -24,6 +24,7 @@
 [![Suricata](https://img.shields.io/badge/Suricata-7.0.8-ffcc00?style=flat-square&labelColor=0a0e14)](https://suricata.io)
 [![ET Open](https://img.shields.io/badge/rules-ET_Open-8844ff?style=flat-square&labelColor=0a0e14)](https://rules.emergingthreats.net)
 [![Maintained](https://img.shields.io/badge/Maintained-yes-00ff88?style=flat-square&labelColor=0a0e14)]()
+[![Maintained](https://prnt.sc/u0f04eqwahVT)]()
 
 </div>
 
