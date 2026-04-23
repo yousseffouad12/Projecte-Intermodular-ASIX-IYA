@@ -49,7 +49,7 @@ Projecte acadèmic de ciberseguretat que demostra la implementació d'un sistema
 
 ## 🏗️ Arquitectura del Projecte
 
-L'entorn s'ha desplegat mitjançant màquines virtuals (VirtualBox) simulant una infraestructura de xarxa perimetral real:
+L'entorn s'ha desplegat mitjançant màquines virtuals (VirtualBox) simulant una infraestructura de xarxa real:
 
 - **Tallafocs/Router:** pfSense (4 Cores, 8 GB RAM).
 - **Emmagatzematge:** Doble disc — Disc 1 per al SO, Disc 2 dedicat a `/var/log`.
