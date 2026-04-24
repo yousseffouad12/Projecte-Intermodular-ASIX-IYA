@@ -46,7 +46,7 @@ Projecte acadèmic de ASIX2 que demostra la implementació d'un sistema de **Det
 
 ---
 
-## 🏗️ Arquitectura del Projecte
+##  Arquitectura del Projecte
 
 L'entorn s'ha desplegat mitjançant màquines virtuals (VirtualBox) simulant una infraestructura de xarxa real:
 
@@ -58,7 +58,7 @@ L'entorn s'ha desplegat mitjançant màquines virtuals (VirtualBox) simulant una
 
 ---
 
-## 🛠️ Tecnologies Utilitzades
+##  Tecnologies Utilitzades
 
 | Categoria | Eines |
 |:---|:---|
@@ -71,7 +71,7 @@ L'entorn s'ha desplegat mitjançant màquines virtuals (VirtualBox) simulant una
 
 ---
 
-## 🚀 Característiques Principals
+##  Característiques Principals
 
 ### 1. Mode IPS Actiu (Legacy Mode)
 Deshabilitació de l'acceleració per maquinari (`Disable hardware checksum offload`) per forçar tot el trànsit per la CPU. Suricata realitza **Deep Packet Inspection (DPI)** i insereix automàticament les IPs atacants a la taula de bloqueig de pfSense (`pf table`) en temps real. Temps de bloqueig configurat: **3 hores**.
@@ -95,7 +95,7 @@ Llista `Admin_Pass` que exclou les IPs de gestió del motor IPS per evitar autob
 
 ---
 
-## ⚔️ Auditoria i Pentesting (Casos d'Ús)
+##  Auditoria i Pentesting (Casos d'Ús)
 
 ### LAN Pentesting amb **KALI linux** (192.168.10.x → 192.168.10.1)
 
@@ -122,7 +122,7 @@ Llista `Admin_Pass` que exclou les IPs de gestió del motor IPS per evitar autob
 
 ---
 
-## 🤖 Automatització i Sistemes Complementaris
+##  Automatització i Sistemes Complementaris
 
 ### Notificacions Crítiques via Telegram
 
@@ -156,7 +156,7 @@ Llistes personalitzades actives: `facebook.com`, `tiktok.com`, `bet365.com`, `ro
 
 ---
 
-## ⚙️ Optimització de Rendiment
+##  Optimització de Rendiment
 
 | Paràmetre | Valor | Motiu |
 |:---|:---|:---|
@@ -169,7 +169,7 @@ Llistes personalitzades actives: `facebook.com`, `tiktok.com`, `bet365.com`, `ro
 
 ---
 
-## 👥 Autors
+##  Autors
 
 | Camp | Detall |
 |:---|:---|
@@ -183,7 +183,7 @@ Llistes personalitzades actives: `facebook.com`, `tiktok.com`, `bet365.com`, `ro
 
 ---
 
-## 📚 Webgrafia i Referències Tècniques
+##  Webgrafia i Referències Tècniques
 
 **Documentació oficial:**
 - [Netgate Docs — pfSense](https://docs.netgate.com)
