@@ -97,7 +97,7 @@ Llista `Admin_Pass` que exclou les IPs de gestió del motor IPS per evitar autob
 
 ## ⚔️ Auditoria i Pentesting (Casos d'Ús)
 
-### LAN Pentesting amb **KALI linux** (192.168.10.105 → 192.168.10.1)
+### LAN Pentesting amb **KALI linux** (192.168.10.x → 192.168.10.1)
 
 | Prova | Eina | Comanda | Resultat IPS |
 |:---|:---|:---|:---|
@@ -109,7 +109,7 @@ Llista `Admin_Pass` que exclou les IPs de gestió del motor IPS per evitar autob
 | Protocol insegur | `Telnet` | `telnet 192.168.10.1` | ✕ `SID:1000012` |
 | ICMP oversized | `ping` | `ping -s 2000` | ✕ `SID:1000013` flood |
 
-### WAN Pentesting amb **KALI linux** (10.93.255.105 → 10.93.255.38)
+### WAN Pentesting amb **KALI linux** (10.93.255.x → 10.93.255.x)
 
 | Prova | Eina | Comanda | Resultat IPS |
 |:---|:---|:---|:---|
