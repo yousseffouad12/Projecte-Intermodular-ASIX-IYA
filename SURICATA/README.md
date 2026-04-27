@@ -179,7 +179,6 @@ Llistes personalitzades actives: `facebook.com`, `tiktok.com`, `bet365.com`, `ro
 | **Institut** | INS Sa Palomera |
 | **Curs** | 2025 – 2026 |
 
-> *Documentació amb finalitats purament acadèmiques i educatives en l'àmbit de la ciberseguretat.*
 
 ---
 
