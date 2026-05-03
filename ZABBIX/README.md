@@ -287,9 +287,9 @@ last(/PFSENSE_HARDWARE/vfs.fs.dependent.size[/,pused]) > 90
 ## 📧 Integració Gmail + Jira Service Management
 
 ### Flux Complet d'Incident
-```
+
 ![flux](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/876647a56846213d40f3a1450f7b9522f2fcaa94/ZABBIX/IMG/alert-pipeline.svg)
-```
+
 
 ### Format de les Alertes Personalitzades
 
@@ -372,9 +372,9 @@ sudo -u zabbix ssh admin@192.168.10.1 "echo 'tot ok'"
 
 El dashboard **ADMIN_ZABBIX** funciona com a **Centre de Control Operatiu** amb lectura jeràrquica:
 
-```
+
 ![DASHBOARD]https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/d4d25ed99592e92387f8c7cfcfa3d01c2d96432a/ZABBIX/IMG/Screenshot_2.png)
-```
+
 
 ### Ginys implementats
 
