@@ -1,0 +1,123 @@
+<svg width="860" height="480" viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="860" height="480" rx="16" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="430" y="38" text-anchor="middle" font-size="15" font-weight="600" fill="#c9d1d9" letter-spacing="2">DETECTION  →  ALERT  →  INCIDENT PIPELINE</text>
+  <line x1="60" y1="50" x2="800" y2="50" stroke="#30363d" stroke-width="0.8"/>
+
+  <!-- ══ ZABBIX CARD ══ -->
+  <rect x="40" y="72" width="200" height="160" rx="10" fill="#161b22" stroke="#e24b4a" stroke-width="1.5"/>
+  <!-- Z logo -->
+  <polygon points="80,100 140,100 80,148 140,148" fill="none" stroke="#e24b4a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- alert dot -->
+  <circle cx="230" cy="72" r="12" fill="#e24b4a"/>
+  <text x="230" y="77" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">!</text>
+  <!-- labels -->
+  <text x="140" y="172" text-anchor="middle" font-size="13" font-weight="700" fill="#f0f6fc">Zabbix 7.0</text>
+  <text x="140" y="190" text-anchor="middle" font-size="11" fill="#8b949e">Monitor + Trigger</text>
+  <text x="140" y="208" text-anchor="middle" font-size="11" fill="#8b949e">pfSense / Suricata</text>
+
+  <!-- ══ Arrow Zabbix → Gmail ══ -->
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#e24b4a" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#4493f8" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#3fb950" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+  <line x1="242" y1="152" x2="322" y2="152" stroke="#e24b4a" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#ah)"/>
+  <text x="282" y="143" text-anchor="middle" font-size="10" fill="#8b949e">SMTP/SSL</text>
+
+  <!-- ══ GMAIL CARD ══ -->
+  <rect x="330" y="72" width="200" height="160" rx="10" fill="#161b22" stroke="#ea4335" stroke-width="1.5"/>
+  <!-- Gmail M logo -->
+  <rect x="355" y="96" width="150" height="100" rx="4" fill="none" stroke="#ea4335" stroke-width="1.5"/>
+  <polyline points="355,96 430,148 505,96" fill="none" stroke="#ea4335" stroke-width="2" stroke-linejoin="round"/>
+  <!-- labels -->
+  <text x="430" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#f0f6fc">Gmail</text>
+  <text x="430" y="228" text-anchor="middle" font-size="10" fill="#8b949e">iyaprojecto@gmail.com</text>
+
+  <!-- ══ Arrow Gmail → Jira ══ -->
+  <line x1="532" y1="152" x2="612" y2="152" stroke="#4493f8" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#ah2)"/>
+  <text x="572" y="143" text-anchor="middle" font-size="10" fill="#8b949e">Email request</text>
+
+  <!-- ══ JIRA CARD ══ -->
+  <rect x="620" y="72" width="200" height="160" rx="10" fill="#161b22" stroke="#4493f8" stroke-width="1.5"/>
+  <!-- Jira diamond logo -->
+  <path d="M720,96 L760,136 L720,176 L680,136 Z" fill="none" stroke="#4493f8" stroke-width="2"/>
+  <path d="M720,108 L750,136 L720,164 L690,136 Z" fill="#1c2d3f" stroke="none"/>
+  <path d="M720,116 L742,136 L720,156 L698,136 Z" fill="#4493f8" stroke="none" opacity="0.6"/>
+  <!-- labels -->
+  <text x="720" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#f0f6fc">Jira Service Mgmt</text>
+  <text x="720" y="218" text-anchor="middle" font-size="10" fill="#8b949e">Tiquet creat automaticament</text>
+
+  <!-- ══ BOTTOM LIFECYCLE ROW ══ -->
+  <line x1="60" y1="270" x2="800" y2="270" stroke="#30363d" stroke-width="0.5"/>
+  <text x="430" y="292" text-anchor="middle" font-size="11" fill="#6e7681" letter-spacing="1">CICLE DE VIDA DE LA INCIDENCIA</text>
+
+  <!-- Step 1: Detecció -->
+  <rect x="40" y="308" width="168" height="60" rx="8" fill="#1c1a1a" stroke="#e24b4a" stroke-width="1"/>
+  <circle cx="64" cy="328" r="8" fill="#e24b4a"/>
+  <text x="64" y="332" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">1</text>
+  <text x="124" y="328" text-anchor="middle" font-size="12" font-weight="600" fill="#f0f6fc">Deteccio</text>
+  <text x="124" y="346" text-anchor="middle" font-size="10" fill="#8b949e">DNS caigut · Severity: Avg</text>
+  <text x="124" y="360" text-anchor="middle" font-size="10" fill="#8b949e">Trigger actiu &lt; 1 min</text>
+
+  <!-- Arrow -->
+  <line x1="210" y1="338" x2="238" y2="338" stroke="#6e7681" stroke-width="1" marker-end="url(#ah3)"/>
+
+  <!-- Step 2: Notificació -->
+  <rect x="244" y="308" width="168" height="60" rx="8" fill="#1c1a1a" stroke="#ea4335" stroke-width="1"/>
+  <circle cx="268" cy="328" r="8" fill="#ea4335"/>
+  <text x="268" y="332" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">2</text>
+  <text x="328" y="328" text-anchor="middle" font-size="12" font-weight="600" fill="#f0f6fc">Notificacio Gmail</text>
+  <text x="328" y="346" text-anchor="middle" font-size="10" fill="#8b949e">[URGENT-IYA] enviada</text>
+  <text x="328" y="360" text-anchor="middle" font-size="10" fill="#8b949e">Assumpte + cos HTML</text>
+
+  <!-- Arrow -->
+  <line x1="414" y1="338" x2="442" y2="338" stroke="#6e7681" stroke-width="1" marker-end="url(#ah3)"/>
+
+  <!-- Step 3: Tiquet Jira -->
+  <rect x="448" y="308" width="168" height="60" rx="8" fill="#1c1a1a" stroke="#4493f8" stroke-width="1"/>
+  <circle cx="472" cy="328" r="8" fill="#4493f8"/>
+  <text x="472" y="332" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3</text>
+  <text x="532" y="328" text-anchor="middle" font-size="12" font-weight="600" fill="#f0f6fc">Tiquet Jira</text>
+  <text x="532" y="346" text-anchor="middle" font-size="10" fill="#8b949e">ZABBIX-N creat auto.</text>
+  <text x="532" y="360" text-anchor="middle" font-size="10" fill="#8b949e">Assignat + seguit</text>
+
+  <!-- Arrow -->
+  <line x1="618" y1="338" x2="646" y2="338" stroke="#6e7681" stroke-width="1" marker-end="url(#ah3)"/>
+
+  <!-- Step 4: Resolt -->
+  <rect x="652" y="308" width="168" height="60" rx="8" fill="#1c1a1a" stroke="#3fb950" stroke-width="1"/>
+  <circle cx="676" cy="328" r="8" fill="#3fb950"/>
+  <text x="676" y="332" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">4</text>
+  <text x="736" y="328" text-anchor="middle" font-size="12" font-weight="600" fill="#f0f6fc">Resolt</text>
+  <text x="736" y="346" text-anchor="middle" font-size="10" fill="#8b949e">[SOLUCIONAT-IYA]</text>
+  <text x="736" y="360" text-anchor="middle" font-size="10" fill="#8b949e">Tiquet tancat</text>
+
+  <!-- ══ BOTTOM BAR ══ -->
+  <line x1="60" y1="394" x2="800" y2="394" stroke="#30363d" stroke-width="0.5"/>
+  <circle cx="100" cy="416" r="5" fill="#e24b4a"/>
+  <text x="112" y="420" font-size="10" fill="#6e7681">Problema actiu</text>
+  <circle cx="240" cy="416" r="5" fill="#ea4335"/>
+  <text x="252" y="420" font-size="10" fill="#6e7681">Alerta enviada</text>
+  <circle cx="380" cy="416" r="5" fill="#4493f8"/>
+  <text x="392" y="420" font-size="10" fill="#6e7681">Tiquet obert</text>
+  <circle cx="500" cy="416" r="5" fill="#3fb950"/>
+  <text x="512" y="420" font-size="10" fill="#6e7681">Incident resolt</text>
+  <text x="800" y="420" text-anchor="end" font-size="10" fill="#30363d">Zabbix 7.0 · pfSense 2.7.2 · Suricata 7.0.8</text>
+
+  <!-- corner brackets decoration -->
+  <path d="M40,18 L40,8 L50,8" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M820,18 L820,8 L810,8" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M40,462 L40,472 L50,472" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M820,462 L820,472 L810,472" stroke="#30363d" stroke-width="1.5" fill="none"/>
+
+</svg>
