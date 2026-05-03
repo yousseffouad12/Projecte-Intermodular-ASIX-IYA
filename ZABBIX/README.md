@@ -287,7 +287,7 @@ last(/PFSENSE_HARDWARE/vfs.fs.dependent.size[/,pused]) > 90
 ## 📧 Integració Gmail + Jira Service Management
 
 ### Flux Complet d'Incident
-
+```
 ![flux](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/876647a56846213d40f3a1450f7b9522f2fcaa94/ZABBIX/IMG/alert-pipeline.svg)
 ```
 
@@ -373,21 +373,7 @@ sudo -u zabbix ssh admin@192.168.10.1 "echo 'tot ok'"
 El dashboard **ADMIN_ZABBIX** funciona com a **Centre de Control Operatiu** amb lectura jeràrquica:
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│  SURICATA LAN/WAN    │  EQUIPS          │  DATA/HORA │  PROBLEMES   │
-│  OK: LAN i WAN (2)   │  PFSENSE_HW     │            │  (llista)    │
-│                      │  PFSENSE_XARXA  │ 2026-05-03 │              │
-│  Estat Suricata      │  Zabbix server  │  16:19:29  │              │
-├──────────────────────┴──────────────────┴────────────┴──────────────┤
-│  PFSENSE UP/DOWN     │  DHCP            │  DNS       │  Per gravetat│
-│  ✅ Up (1.00)        │  ✅ running(2.0) │  ✅ (2.00) │  🔴0 🟠0 🟡0│
-├──────────────────────────────────────────┬──────────────────────────┤
-│  📈 LAN (trànsit)                        │  📬 CORREU (log alertes) │
-│  PFSENSE_XARXA: em0 Network traffic      │  Enviats / Estat         │
-├──────────────────────────────────────────┤                          │
-│  📈 WAN (trànsit)                        │                          │
-│  PFSENSE_XARXA: em1 Network traffic      │                          │
-└──────────────────────────────────────────┴──────────────────────────┘
+![DASHBOARD]https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/d4d25ed99592e92387f8c7cfcfa3d01c2d96432a/ZABBIX/IMG/Screenshot_2.png)
 ```
 
 ### Ginys implementats
