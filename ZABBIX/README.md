@@ -288,23 +288,7 @@ last(/PFSENSE_HARDWARE/vfs.fs.dependent.size[/,pused]) > 90
 
 ### Flux Complet d'Incident
 
-```
-  Zabbix detecta problema
-         │
-         ▼
-  ┌─────────────────┐     SMTP/SSL    ┌──────────────────┐
-  │  Trigger actiu  │────────────────▶│  Gmail           │
-  │  (ex: DNS down) │                 │  iyaprojecto@    │
-  └─────────────────┘                 └────────┬─────────┘
-                                               │ Email Request
-                                               ▼
-                                      ┌──────────────────┐
-                                      │  Jira Service    │
-                                      │  Management      │
-                                      │  → Tiquet auto   │
-                                      │  → Seguiment     │
-                                      │  → Tancament     │
-                                      └──────────────────┘
+![flux](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/876647a56846213d40f3a1450f7b9522f2fcaa94/ZABBIX/IMG/alert-pipeline.svg)
 ```
 
 ### Format de les Alertes Personalitzades
