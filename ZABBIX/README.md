@@ -447,9 +447,9 @@ L'administrador rep cada dilluns a les 9h un PDF complet amb:
 
 | | Nom | Rol |
 |-|-----|-----|
-| 🧑‍💻 | **Izan Ruiz** | Infraestructura, pfSense, Scripts SSH |
-| 🧑‍💻 | **Youssef Fouad** | Zabbix, Notificacions, Jira Integration |
-| 🧑‍💻 | **Adrià Rodríguez** | Dashboard, Triggers, Documentació |
+| 🧑‍💻 | **Izan Ruiz** |
+| 🧑‍💻 | **Youssef Fouad** | 
+| 🧑‍💻 | **Adrià Rodríguez** |
 
 **INS Sa Palomera · ASIX 2 · Curs 2025–2026**
 
