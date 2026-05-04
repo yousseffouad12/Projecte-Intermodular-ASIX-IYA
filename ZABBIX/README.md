@@ -32,31 +32,7 @@
 ---
 
 ## 📡 Arquitectura del Sistema
-
-```
-                    ┌─────────────────────────────────────────────────────┐
-                    │              INFRAESTRUCTURA DE LABORATORI           │
-                    │                                                      │
-  ┌──────────┐      │   ┌──────────────┐      ┌──────────────────────┐   │
-  │ INTERNET │──────│──▶│   pfSense    │─────▶│   XARXA LAN          │   │
-  │          │  WAN │   │   2.7.2      │ LAN  │   192.168.10.x/24    │   │
-  └──────────┘      │   │ + Suricata   │      └──────────────────────┘   │
-                    │   │   IDS/IPS    │               │                  │
-                    │   └──────────────┘               │                  │
-                    │          │ SNMP/SSH               ▼                  │
-                    │          │               ┌──────────────────────┐   │
-                    │          └──────────────▶│  ZABBIX SERVER       │   │
-                    │                          │  Debian 12           │   │
-                    │                          │  192.168.10.x        │   │
-                    │                          │  + MariaDB + Apache  │   │
-                    │                          └──────────────────────┘   │
-                    │                                   │                  │
-                    │                          ┌────────▼───────────┐     │
-                    │                          │  NOTIFICACIONS     │     │
-                    │                          │  Gmail · Jira      │     │
-                    │                          └────────────────────┘     │
-                    └─────────────────────────────────────────────────────┘
-```
+![funcionament](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/cd77904086b3839669c2b5533d789fc6dab57e61/ZABBIX/IMG/infrastructure.svg)
 
 ---
 
