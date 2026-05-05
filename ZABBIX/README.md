@@ -421,8 +421,6 @@ L'administrador rep cada dilluns a les 9h un PDF complet amb:
 
 <div align="center">
 
-| Nom 
-|-|-----|-----|
 | 🧑‍💻 | **Izan Ruiz** 
 | 🧑‍💻 | **Youssef Fouad** 
 | 🧑‍💻 | **Adrià Rodríguez** 
