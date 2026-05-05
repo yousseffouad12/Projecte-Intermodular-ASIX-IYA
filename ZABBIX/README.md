@@ -421,11 +421,11 @@ L'administrador rep cada dilluns a les 9h un PDF complet amb:
 
 <div align="center">
 
-| | Nom | Rol |
+| Nom 
 |-|-----|-----|
-| 🧑‍💻 | **Izan Ruiz** |
-| 🧑‍💻 | **Youssef Fouad** | 
-| 🧑‍💻 | **Adrià Rodríguez** |
+| 🧑‍💻 | **Izan Ruiz** 
+| 🧑‍💻 | **Youssef Fouad** 
+| 🧑‍💻 | **Adrià Rodríguez** 
 
 **INS Sa Palomera · ASIX 2 · Curs 2025–2026**
 
