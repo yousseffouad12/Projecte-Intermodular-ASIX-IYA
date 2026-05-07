@@ -439,7 +439,7 @@ Un cop s'ha tornat a activar el servei DNS al pfSense, Zabbix ha detectat la rec
 
 La captura del dashboard mostra tots els ginys en verd, el comptador de problemes actius a 0, i el giny **DNS** recuperat a l'estat `running (2)`, confirmant que el sistema ha tornat a la normalitat.
 
-![Dashboard Zabbix sense alertes actives](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/zabbix_dashboard_resolved.png)
+![Dashboard Zabbix sense alertes actives](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/ca28e92580433381bc2234cc26fa1eabaa1a6532/ZABBIX/IMG/image.png)
 
 La captura del correu de resolució mostra l'assumpte `[SOLUCIONAT-IYA] 3m 42s: PFSense: DNS server is not running en PFSENSE_XARXA` amb la durada total de la incidència i la marca horària de recuperació.
 
