@@ -407,7 +407,7 @@ Simultàniament, el trigger ha activat l'acció configurada i ha iniciat el flux
 
 A la captura del dashboard es pot veure el giny **DNS** en color vermell amb l'estat `not running (0)`, el comptador de problemes actius incrementat a 1, i la llista de problemes amb la incidència activa de gravetat **Average** i la marca de temps d'inici.
 
-![Dashboard Zabbix amb alerta DNS](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/zabbix_dashboard_dns_alert.png)
+![Dashboard Zabbix amb alerta DNS](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/b84cce5c6f294751bb6de9f5d929e6887ca8c360/ZABBIX/IMG/image.png)
 
 ---
 
