@@ -417,7 +417,7 @@ El sistema de notificacions ha connectat amb els servidors SMTP de Google i ha e
 
 La captura mostra el correu rebut a la bústia de l'administrador amb l'assumpte `[URGENT-IYA] PFSense: DNS server is not running en PFSENSE_XARXA`, el cos de missatge amb tots els camps de la incidència (nom, host, severitat, dades operacionals i ID del problema), i la marca horària d'enviament.
 
-![Correu d'alerta rebut a Gmail](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/gmail_alert_received.png)
+![Correu d'alerta rebut a Gmail](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/c713aee0db6387ef62a32b911ee814f878b8fc86/ZABBIX/IMG/image1.png)
 
 ---
 
