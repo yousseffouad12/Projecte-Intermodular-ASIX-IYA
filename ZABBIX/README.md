@@ -475,29 +475,6 @@ Aquest comportament automatitzat demostra que la plataforma Zabbix compleix corr
 
 **Resultat: 100% del flux validat correctament.**
 
----
-
-## Bibliografia
-
-**Documentació oficial**
-
-- Zabbix LLC. (2025). *Zabbix Documentation 7.0*. https://www.zabbix.com/documentation/
-- Rubicon Communications, LLC (Netgate). (2026). *pfSense® software Documentation*. https://docs.netgate.com/pfsense/
-- Atlassian. (2026). *Jira Service Management Cloud Documentation*. https://support.atlassian.com/jira-service-management/
-- MariaDB Foundation. (2025). *MariaDB Server Documentation*. https://mariadb.com/kb/en/documentation/
-
-**Protocols i estàndards**
-
-- Postel, J. (1980). RFC 792: *Internet Control Message Protocol (ICMP)*. IETF. https://datatracker.ietf.org/doc/html/rfc792
-- Case, J. et al. (1990). RFC 1157: *Simple Network Management Protocol (SNMP)*. IETF. https://datatracker.ietf.org/doc/html/rfc1157
-
-**Comunitats i suport tècnic**
-
-- Zabbix Forums. https://www.zabbix.com/forum/
-- Server Fault / Stack Overflow. https://serverfault.com/
-
----
-
 ## Autors
 
 <div align="center">
