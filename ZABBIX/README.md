@@ -427,7 +427,7 @@ El Jira ha detectat el nou correu a la bústia d'entrada i ha creat automàticam
 
 La captura mostra el tiquet creat a Jira Service Management amb el títol `[URGENT-IYA] PFSense: DNS server is not running en PFSENSE_XARXA`, l'estat inicial **Obert**, la prioritat **Average** heretada de Zabbix, i el cos del tiquet amb tots els detalls de la incidència importats automàticament des del correu.
 
-![Tiquet creat automàticament a Jira](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/jira_ticket_created.png)
+![Tiquet creat automàticament a Jira](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/ec15afd749e9548fb0fb91e9962214f339e03959/ZABBIX/IMG/image1.png)
 
 El tiquet queda assignat i segueix el flux de treball estàndard: **Obert → En curs → Resolt → Tancat**. Totes les accions realitzades (canvis d'estat, comentaris tècnics, evidències) queden registrades dins del tiquet per a futures auditories.
 
