@@ -395,7 +395,7 @@ S'ha accedit a la interfície web de gestió del firewall (`Status → Services`
 
 A la captura següent es pot observar la llista de serveis del pfSense amb el **DNS Resolver** en estat aturat (indicador vermell), mentre la resta de serveis com DHCP i Suricata continuen operatius (indicador verd).
 
-![DNS aturat al pfSense](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/pfsense_dns_stopped.png)
+![DNS aturat al pfSense](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/295f881ecc136c682176038365e1b1ea4b08adb6/ZABBIX/IMG/image.png)
 
 ---
 
