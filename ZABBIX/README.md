@@ -16,7 +16,7 @@
 
 ### `Debian 12` · `Zabbix 7.0` · `pfSense 2.7.2` · `Suricata 7.0.8` · `MariaDB` · `Apache`
 
-![Status](https://img.shields.io/badge/estat-✅_actiu-brightgreen?style=flat-square)
+![Status](https://img.shields.io/badge/estat-actiu-brightgreen?style=flat-square)
 ![Zabbix](https://img.shields.io/badge/Zabbix-7.0-red?style=flat-square&logo=zabbix)
 ![pfSense](https://img.shields.io/badge/pfSense-2.7.2-darkblue?style=flat-square)
 ![Suricata](https://img.shields.io/badge/Suricata-7.0.8-orange?style=flat-square)
@@ -31,28 +31,31 @@
 
 ---
 
-## 📡 Arquitectura del Sistema
+## Arquitectura del Sistema
+
 ![funcionament](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/cd77904086b3839669c2b5533d789fc6dab57e61/ZABBIX/IMG/infrastructure.svg)
 
 ---
 
-## 🗂️ Índex
+## Índex
 
-- [Introducció](#-introducció)
-- [Stack Tecnològic](#-stack-tecnològic)
-- [Requisits del Sistema](#-requisits-del-sistema)
-- [Instal·lació i Configuració](#-installació-i-configuració)
-- [Monitorització de pfSense i Suricata](#-monitorització-de-pfsense-i-suricata)
-- [Polítiques i Triggers d'Alerta](#-polítiques-i-triggers-dalerta)
-- [Integració Gmail + Jira Service Management](#-integració-gmail--jira-service-management)
-- [Scripts Personalitzats](#-scripts-personalitzats)
-- [Dashboard](#-dashboard)
-- [Informes Periòdics](#-informes-periòdics)
-- [Autors](#-autors)
+- [Introducció](#introducció)
+- [Stack Tecnològic](#stack-tecnològic)
+- [Requisits del Sistema](#requisits-del-sistema)
+- [Instal·lació i Configuració](#installació-i-configuració)
+- [Monitorització de pfSense i Suricata](#monitorització-de-pfsense-i-suricata)
+- [Polítiques i Triggers d'Alerta](#polítiques-i-triggers-dalerta)
+- [Integració Gmail + Jira Service Management](#integració-gmail--jira-service-management)
+- [Scripts Personalitzats](#scripts-personalitzats)
+- [Dashboard](#dashboard)
+- [Informes Periòdics](#informes-periòdics)
+- [Proves i Validació](#proves-i-validació)
+- [Bibliografia](#bibliografia)
+- [Autors](#autors)
 
 ---
 
-## 🧭 Introducció
+## Introducció
 
 La **monitorització de xarxa** és una part fonamental de l'administració de sistemes moderns. En un entorn professional, no podem dependre de les queixes dels usuaris per detectar que un servei ha fallat — necessitem **visibilitat en temps real i alertes proactives**.
 
@@ -66,7 +69,7 @@ L'objectiu és la **proactivitat**: recollir mètriques de servidors, dispositiu
 
 ---
 
-## 🛠️ Stack Tecnològic
+## Stack Tecnològic
 
 | Component | Versió | Funció |
 |-----------|--------|--------|
@@ -83,7 +86,7 @@ L'objectiu és la **proactivitat**: recollir mètriques de servidors, dispositiu
 
 ---
 
-## 💻 Requisits del Sistema
+## Requisits del Sistema
 
 ### Hardware (Màquina Virtual Zabbix)
 
@@ -105,7 +108,7 @@ SSH:          Port 22 · Autenticació per clau pública RSA
 
 ---
 
-## 🚀 Instal·lació i Configuració
+## Instal·lació i Configuració
 
 ### 1. Preparació del Sistema Operatiu
 
@@ -184,14 +187,14 @@ Accés al frontend web: `http://<IP_SERVIDOR>/zabbix`
 
 ---
 
-## 🔥 Monitorització de pfSense i Suricata
+## Monitorització de pfSense i Suricata
 
 ### Configuració SNMP al pfSense
 
 Al panell d'administració web de pfSense (`Services → SNMP`):
 
 ```
-SNMP Daemon:     ✅ Activat
+SNMP Daemon:     Activat
 Polling Port:    161 (UDP)
 Community:       public
 Mòduls actius:   MibII · Netgraph · PF · Host Resources · UCD · Regex
@@ -210,7 +213,7 @@ Macro:        {$SNMP_COMMUNITY} = public
 
 ### Paràmetres Monitoritzats
 
-#### 🖥️ Hardware (pfSense + Zabbix Server)
+#### Hardware (pfSense + Zabbix Server)
 
 | Paràmetre | Descripció | Llindar crític |
 |-----------|------------|----------------|
@@ -218,7 +221,7 @@ Macro:        {$SNMP_COMMUNITY} = public
 | **Memory Usage** | RAM consumida | < 10% lliure |
 | **Disk Space** | Ocupació de `/` i `/var/log` | > 90% usat |
 
-#### 🌐 Xarxa (Connectivitat i Amplada de Banda)
+#### Xarxa (Connectivitat i Amplada de Banda)
 
 | Paràmetre | Interfície | Descripció |
 |-----------|------------|------------|
@@ -229,18 +232,18 @@ Macro:        {$SNMP_COMMUNITY} = public
 
 ---
 
-## 🚨 Polítiques i Triggers d'Alerta
+## Polítiques i Triggers d'Alerta
 
 ### Taula de Llindars
 
 | Paràmetre | Condició | Gravetat | Acció Recomanada |
 |-----------|----------|----------|-----------------|
-| **CPU Load** | `avg > 85%` durant 5 min | 🔴 **ALT** | Revisar processos Suricata / atac DoS |
-| **RAM Usage** | `< 10%` memòria lliure | 🟡 **MITJANA** | Optimitzar MariaDB |
-| **Disk Space** | `> 90%` espai usat | 🔴 **ALT** | Netejar `/var/log` |
-| **ICMP Ping** | `= 0` (no respon) | 💥 **DESASTRE** | Node apagat o tall físic |
-| **DNS down** | `= 0` | 🟠 **AVÍS** | Reiniciar servei DNS |
-| **DHCP down** | `= 0` | 🟠 **AVÍS** | Reiniciar servei DHCP |
+| **CPU Load** | `avg > 85%` durant 5 min | **ALT** | Revisar processos Suricata / atac DoS |
+| **RAM Usage** | `< 10%` memòria lliure | **MITJANA** | Optimitzar MariaDB |
+| **Disk Space** | `> 90%` espai usat | **ALT** | Netejar `/var/log` |
+| **ICMP Ping** | `= 0` (no respon) | **DESASTRE** | Node apagat o tall físic |
+| **DNS down** | `= 0` | **AVÍS** | Reiniciar servei DNS |
+| **DHCP down** | `= 0` | **AVÍS** | Reiniciar servei DHCP |
 
 ### Exemples d'Expressions de Trigger
 
@@ -260,28 +263,27 @@ last(/PFSENSE_HARDWARE/vfs.fs.dependent.size[/,pused]) > 90
 
 ---
 
-## 📧 Integració Gmail + Jira Service Management
+## Integració Gmail + Jira Service Management
 
 ### Flux Complet d'Incident
 
 ![flux](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/876647a56846213d40f3a1450f7b9522f2fcaa94/ZABBIX/IMG/alert-pipeline.svg)
 
-
 ### Format de les Alertes Personalitzades
 
 **Problema** — Assumpte:
 ```
-[URGENT-IYA] 🔴 {EVENT.NAME} en {HOST.NAME}
+[URGENT-IYA] {EVENT.NAME} en {HOST.NAME}
 ```
 
 **Resolució** — Assumpte:
 ```
-[SOLUCIONAT-IYA] ✅ {EVENT.DURATION}: {EVENT.NAME} en {HOST.NAME}
+[SOLUCIONAT-IYA] {EVENT.DURATION}: {EVENT.NAME} en {HOST.NAME}
 ```
 
 **Cos del missatge (exemple real):**
 ```
-🔴 ALERTA CRÍTICA - SISTEMA IYA
+ALERTA CRÍTICA - SISTEMA IYA
 ==========================================
 Problem started at 15:47:45 on 2026.05.02
 
@@ -294,7 +296,7 @@ Problem started at 15:47:45 on 2026.05.02
 
 ---
 
-## 🤖 Scripts Personalitzats
+## Scripts Personalitzats
 
 ### Monitor de Suricata via SSH
 
@@ -339,18 +341,16 @@ sudo cat /var/lib/zabbix/.ssh/id_rsa.pub
 
 # Validació
 sudo -u zabbix ssh admin@192.168.10.1 "echo 'tot ok'"
-# → tot ok  ✅
+# → tot ok
 ```
 
 ---
 
-## 📊 Dashboard
+## Dashboard
 
-El dashboard **ADMIN_ZABBIX** funciona com a **Centre de Control Operatiu** amb lectura jeràrquica:
-
+El dashboard **ADMIN_ZABBIX** funciona com a centre de control operatiu amb lectura jeràrquica de la infraestructura.
 
 ![DASHBOARD](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/d4d25ed99592e92387f8c7cfcfa3d01c2d96432a/ZABBIX/IMG/Screenshot_2.png)
-
 
 ### Ginys implementats
 
@@ -367,7 +367,7 @@ El dashboard **ADMIN_ZABBIX** funciona com a **Centre de Control Operatiu** amb 
 
 ---
 
-## 📑 Informes Periòdics
+## Informes Periòdics
 
 Configuració de l'informe programat `INFORME_ZABBIX_IYA`:
 
@@ -381,49 +381,132 @@ Assumpte:    Zabbix: Informe de l'estat de la xarxa (Dilluns)
 Destinatari: Admin (Zabbix Administrator) → Gmail + Jira
 ```
 
-L'administrador rep cada dilluns a les 9h un PDF complet amb:
-- Estat de disponibilitat dels serveis (SLA)
-- Gràfiques de trànsit LAN/WAN de la setmana
-- Resum de les incidències detectades i resoltes
-- Estat del servei Suricata IDS/IPS
+L'administrador rep cada dilluns a les 9h un PDF complet amb l'estat de disponibilitat dels serveis (SLA), les gràfiques de trànsit LAN/WAN de la setmana, el resum de les incidències detectades i resoltes, i l'estat del servei Suricata IDS/IPS.
 
 ---
 
-## 🔬 Prova de Validació End-to-End
+## Proves i Validació
+
+### 13.1. Aturada del servei DNS (DNS Resolver)
+
+Per validar el funcionament complet del sistema, s'ha simulat una fallada real del servei DNS al pfSense. L'objectiu és comprovar que Zabbix detecta el canvi d'estat de xarxa sense necessitat de perdre la connectivitat ICMP completa del dispositiu.
+
+S'ha accedit a la interfície web de gestió del firewall (`Status → Services`) i s'ha aturat manualment el servei **DNS Resolver**.
+
+A la captura següent es pot observar la llista de serveis del pfSense amb el **DNS Resolver** en estat aturat (indicador vermell), mentre la resta de serveis com DHCP i Suricata continuen operatius (indicador verd).
+
+![DNS aturat al pfSense](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/pfsense_dns_stopped.png)
+
+---
+
+### 13.2. Detecció per part de Zabbix i activació d'alertes
+
+En menys d'un minut des de l'aturada, el Zabbix ha detectat que el port del servei DNS no responia. El dashboard ha canviat l'estat de l'equip `PFSENSE_XARXA` a **Problem**, mostrant el missatge `PFSense: DNS server is not running` i marcant el giny DNS en vermell.
+
+Simultàniament, el trigger ha activat l'acció configurada i ha iniciat el flux de notificació.
+
+A la captura del dashboard es pot veure el giny **DNS** en color vermell amb l'estat `not running (0)`, el comptador de problemes actius incrementat a 1, i la llista de problemes amb la incidència activa de gravetat **Average** i la marca de temps d'inici.
+
+![Dashboard Zabbix amb alerta DNS](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/zabbix_dashboard_dns_alert.png)
+
+---
+
+### 13.3. Notificació via Gmail
+
+El sistema de notificacions ha connectat amb els servidors SMTP de Google i ha enviat el correu d'alerta a l'administrador amb l'assumpte personalitzat `[URGENT-IYA]`. Al registre d'accions del Zabbix, l'enviament apareix com a **Enviat**.
+
+La captura mostra el correu rebut a la bústia de l'administrador amb l'assumpte `[URGENT-IYA] PFSense: DNS server is not running en PFSENSE_XARXA`, el cos de missatge amb tots els camps de la incidència (nom, host, severitat, dades operacionals i ID del problema), i la marca horària d'enviament.
+
+![Correu d'alerta rebut a Gmail](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/gmail_alert_received.png)
+
+---
+
+### 13.4. Creació automàtica del tiquet a Jira Service Management
+
+El Jira ha detectat el nou correu a la bústia d'entrada i ha creat automàticament la sol·licitud sense cap intervenció manual. El tiquet inclou tota la informació proporcionada per Zabbix: nom de l'host, severitat, hora d'inici i ID del problema original.
+
+La captura mostra el tiquet creat a Jira Service Management amb el títol `[URGENT-IYA] PFSense: DNS server is not running en PFSENSE_XARXA`, l'estat inicial **Obert**, la prioritat **Average** heretada de Zabbix, i el cos del tiquet amb tots els detalls de la incidència importats automàticament des del correu.
+
+![Tiquet creat automàticament a Jira](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/jira_ticket_created.png)
+
+El tiquet queda assignat i segueix el flux de treball estàndard: **Obert → En curs → Resolt → Tancat**. Totes les accions realitzades (canvis d'estat, comentaris tècnics, evidències) queden registrades dins del tiquet per a futures auditories.
+
+---
+
+### 13.5. Resolució de la incidència i confirmació
+
+Un cop s'ha tornat a activar el servei DNS al pfSense, Zabbix ha detectat la recuperació i ha enviat el correu de resolució amb el prefix `[SOLUCIONAT-IYA]`, incloent la durada total de la incidència. El tiquet a Jira s'ha actualitzat automàticament a l'estat **Resolved**.
+
+La captura del dashboard mostra tots els ginys en verd, el comptador de problemes actius a 0, i el giny **DNS** recuperat a l'estat `running (2)`, confirmant que el sistema ha tornat a la normalitat.
+
+![Dashboard Zabbix sense alertes actives](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/zabbix_dashboard_resolved.png)
+
+La captura del correu de resolució mostra l'assumpte `[SOLUCIONAT-IYA] 3m 42s: PFSense: DNS server is not running en PFSENSE_XARXA` amb la durada total de la incidència i la marca horària de recuperació.
+
+![Correu de resolució [SOLUCIONAT-IYA]](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/gmail_resolved_received.png)
+
+---
+
+### 13.6. Conclusió i validació del flux end-to-end
 
 ```
-1. Aturada manual del servei DNS al pfSense
-         │
-         ▼
-2. Zabbix detecta port DNS no respon (<1 min)
+1. Aturada manual del DNS Resolver al pfSense
+         |
+         v
+2. Zabbix detecta la fallada en menys d'1 minut
    → Dashboard: estat "Problem" en vermell
-   → Missatge: "PFSense: DNS server is not running"
-         │
-         ▼
-3. Trigger activa l'Acció configurada
-   → Gmail envia alerta [URGENT-IYA] 🔴
-   → Jira crea tiquet automàticament (ZABBIX-N)
-         │
-         ▼
+   → Trigger actiu: "PFSense: DNS server is not running"
+         |
+         v
+3. Acció de notificació activada
+   → Gmail: alerta [URGENT-IYA] enviada
+   → Jira: tiquet creat automàticament (ZABBIX-N)
+         |
+         v
 4. Servei DNS restaurat al pfSense
-         │
-         ▼
-5. Zabbix detecta recuperació
-   → Gmail envia [SOLUCIONAT-IYA] ✅ (amb durada: 7m 0s)
-   → Tiquet Jira actualitzat → "Resolved"
+         |
+         v
+5. Zabbix detecta la recuperació
+   → Gmail: [SOLUCIONAT-IYA] amb durada de la incidència
+   → Tiquet Jira: estat actualitzat a "Resolved"
 ```
 
-**Resultat: 100% del flux validat ✅**
+Aquest comportament automatitzat demostra que la plataforma Zabbix compleix correctament amb la seva funció principal: centralitzar la detecció d'incidents, eliminar la dependència de l'avís manual per part dels usuaris i garantir una resposta proactiva, immediata i totalment traçable gràcies a la integració amb el sistema de tiquets.
+
+**Resultat: 100% del flux validat correctament.**
 
 ---
 
-## 👥 Autors
+## Bibliografia
+
+**Documentació oficial**
+
+- Zabbix LLC. (2025). *Zabbix Documentation 7.0*. https://www.zabbix.com/documentation/
+- Rubicon Communications, LLC (Netgate). (2026). *pfSense® software Documentation*. https://docs.netgate.com/pfsense/
+- Atlassian. (2026). *Jira Service Management Cloud Documentation*. https://support.atlassian.com/jira-service-management/
+- MariaDB Foundation. (2025). *MariaDB Server Documentation*. https://mariadb.com/kb/en/documentation/
+
+**Protocols i estàndards**
+
+- Postel, J. (1980). RFC 792: *Internet Control Message Protocol (ICMP)*. IETF. https://datatracker.ietf.org/doc/html/rfc792
+- Case, J. et al. (1990). RFC 1157: *Simple Network Management Protocol (SNMP)*. IETF. https://datatracker.ietf.org/doc/html/rfc1157
+
+**Comunitats i suport tècnic**
+
+- Zabbix Forums. https://www.zabbix.com/forum/
+- Server Fault / Stack Overflow. https://serverfault.com/
+
+---
+
+## Autors
 
 <div align="center">
 
-🧑‍💻 | **Izan Ruiz** 
-🧑‍💻 | **Youssef Fouad** 
-🧑‍💻 | **Adrià Rodríguez** 
+| | Autor |
+|---|---|
+| `ASIX2` | **Izan Ruiz** |
+| `ASIX2` | **Youssef Fouad** |
+| `ASIX2` | **Adrià Rodríguez** |
 
 **INS Sa Palomera · ASIX 2 · Curs 2025–2026**
 
@@ -435,10 +518,8 @@ Mòdul: `M0379 - Miniprojecte`
 
 <div align="center">
 
-```
-● ACTIVE    ● MONITORING    ● ALERTING    ● REPORTING
-```
+`ACTIVE` · `MONITORING` · `ALERTING` · `REPORTING`
 
-*Zabbix 7.0 · pfSense 2.7.2 · Suricata 7.0.8 · ET Open Rules · Maintained: YES*
+*Zabbix 7.0 · pfSense 2.7.2 · Suricata 7.0.8 · ET Open Rules*
 
 </div>
