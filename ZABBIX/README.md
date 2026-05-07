@@ -443,7 +443,7 @@ La captura del dashboard mostra tots els ginys en verd, el comptador de probleme
 
 La captura del correu de resolució mostra l'assumpte `[SOLUCIONAT-IYA] 3m 42s: PFSense: DNS server is not running en PFSENSE_XARXA` amb la durada total de la incidència i la marca horària de recuperació.
 
-![Correu de resolució [SOLUCIONAT-IYA]](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/main/ZABBIX/IMG/gmail_resolved_received.png)
+![Correu de resolució [SOLUCIONAT-IYA]](https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA/blob/2c87364642ccbcde132c650a8d28c081941ccf5e/ZABBIX/IMG/image.png)
 
 ---
 
