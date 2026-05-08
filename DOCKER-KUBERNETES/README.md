@@ -52,12 +52,7 @@
 
 > 💡 L'objectiu no és només que la botiga funcioni — és que sigui **resilient, segura i escalable** en un entorn de producció real.
 
-<!--
-  📸 FOTO RECOMANADA #1
-  Tipus: Diagrama o captura de la pàgina principal de ShopMicro al navegador
-  (mostra la botiga amb les cards de productes, el dark mode i el SSL actiu a la barra del navegador)
-  Pàgina de referència per buscar-la: Secció 4.2 del document / captura pròpia del projecte
--->
+![Captura](IMG/Screenshot_1.png)
 
 ---
 
@@ -126,11 +121,6 @@ La gestió d'inventari és totalment automàtica i transaccional:
 3. **Feedback visual** a l'usuari amb confirmació de compra.
 4. **Bloqueig automàtic**: quan el `stock` arriba a `0`, el botó es desactiva i mostra *"Sense Stock"*.
 
-<!--
-  📸 FOTO RECOMANADA #2
-  Tipus: Captura del diagrama de xarxes Docker (frontend-net / backend-net) o del docker-compose.yml
-  Pàgina de referència: Secció 2.1 i 6.1 del document / eina: `docker network ls` o VSCode
--->
 
 ---
 
@@ -203,11 +193,7 @@ sudo systemctl start docker  # (al worker-2)
 docker service scale shopmicro_product-service=4
 ```
 
-<!--
-  📸 FOTO RECOMANADA #3
-  Tipus: Captura de terminal mostrant `docker node ls` amb els 3 nodes (Manager + 2 Workers) en estat "Ready"
-  Pàgina de referència: Secció 7 i 10 del document / captura pròpia de la terminal
--->
+![Captura](IMG/Screenshot_2.png)
 
 ---
 
@@ -268,11 +254,7 @@ trivy image --severity CRITICAL mysql:8.0
 - `docker pull mysql:8.0` per obtenir la darrera revisió amb pedaços de seguretat de Go.
 - Migrar a una imatge `mysql:8.0-slim` per eliminar eines auxiliars vulnerables innecessàries.
 
-<!--
-  📸 FOTO RECOMANADA #4
-  Tipus: Captura de la sortida de Trivy mostrant la vulnerabilitat CVE-2025-68121 en vermell
-  Pàgina de referència: Secció 16 del document / captura pròpia de la terminal
--->
+![Captura](IMG/Screenshot_3.png)
 
 ---
 
@@ -377,11 +359,7 @@ kubectl port-forward service/api-gateway 8080:80 -n shopmicro
 
 Navegant a `http://localhost:8080` s'ha verificat que el catàleg es carrega correctament des de la base de dades persistent.
 
-<!--
-  📸 FOTO RECOMANADA #5
-  Tipus: Captura de `kubectl get pods -n shopmicro` mostrant tots els pods en estat "Running"
-  Pàgina de referència: Secció 21 i 23 del document / captura pròpia de la terminal
--->
+![Captura](IMG/Screenshot_4.png)
 
 ---
 
