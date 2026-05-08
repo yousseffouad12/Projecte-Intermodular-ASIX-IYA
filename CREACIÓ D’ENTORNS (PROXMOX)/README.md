@@ -112,8 +112,6 @@ Aquest projecte desplega un **entorn de virtualització complet** basat en **Pro
 
 ### Pas 1 – Creació de la VM a VirtualBox
 
-<!-- 📸 FOTO RECOMANADA: Pantalla de creació de VM a VirtualBox amb nom "Proxmox_Projecte" i ISO seleccionada -->
-<!-- Pàgina 5 del document – secció "PAS 1: Creació de la VM a VirtualBox" -->
 
 La màquina `Proxmox_Projecte` s'ha creat a VirtualBox amb la ISO de **Proxmox VE 9.1**, tipus **Linux / Debian (64-bit)**.
 
@@ -127,9 +125,6 @@ La màquina `Proxmox_Projecte` s'ha creat a VirtualBox amb la ISO de **Proxmox V
 
 **Adaptadors de xarxa configurats:**
 
-<!-- 📸 FOTO RECOMANADA: Configuració dels adaptadors de xarxa de la VM (NAT + Host-Only + Red Interna) -->
-<!-- Pàgina 5 del document – captura inferior de la VM amb els 3 adaptadors llistats -->
-
 | Adaptador | Mode | Funció |
 |---|---|---|
 | Adaptador 1 | NAT | Accés a Internet per actualitzacions |
@@ -140,20 +135,14 @@ La màquina `Proxmox_Projecte` s'ha creat a VirtualBox amb la ISO de **Proxmox V
 
 ### Pas 2 – Instal·lació de l'Hypervisor
 
-<!-- 📸 FOTO RECOMANADA: Pantalla de l'instalador de Proxmox VE amb el disc de 50GB seleccionat -->
-<!-- Pàgina 6 del document – "PAS 2: Instal·lació de l'Hypervisor Proxmox" -->
 
 Durant l'instal·lador gràfic de Proxmox VE:
 
 **Disc:** `/dev/sda` (50.00 GiB, VBOX HARDDISK)
 
-<!-- 📸 FOTO RECOMANADA: Pantalla "Location and Time Zone" amb Spain / Europe/Madrid seleccionat -->
-<!-- Pàgina 7 del document – primera captura (selecció de país) -->
 
 **Localització:** `Spain` · `Europe/Madrid` · `Spanish`
 
-<!-- 📸 FOTO RECOMANADA: Pantalla "Management Network Configuration" amb IP 192.168.56.100/24 -->
-<!-- Pàgina 8 del document – "Management Network Configuration" -->
 
 **Configuració de xarxa de gestió:**
 
@@ -167,8 +156,7 @@ DNS Server           : 8.8.8.8
 
 > ⚠️ S'ha assignat la IP de forma **estàtica** per garantir que l'adreça de la consola de gestió no canviï mai.
 
-<!-- 📸 FOTO RECOMANADA: Pantalla "Summary" amb tota la configuració resumida abans d'instal·lar -->
-<!-- Pàgina 9 del document – primera captura (resum d'instal·lació) -->
+![Captura](IMG/Screenshot_2.png)
 
 ---
 
@@ -194,8 +182,6 @@ Accedim via **HTTPS** amb l'usuari `root` i verifiquem que el panell de control 
 
 ### 1. Desplegament de la Màquina Virtual (TrueNAS)
 
-<!-- 📸 FOTO RECOMANADA: Creació de la VM "TrueNAS_Projecte" a VirtualBox amb ISO TrueNAS SCALE -->
-<!-- Pàgina 10 del document – secció "1. Desplegament de la Màquina Virtual Base (TrueNAS)" -->
 
 S'ha creat una segona VM independent per allotjar el **TrueNAS SCALE 25.10.0.1**:
 
@@ -211,8 +197,6 @@ S'ha creat una segona VM independent per allotjar el **TrueNAS SCALE 25.10.0.1**
 
 ### 2. Configuració de Xarxa
 
-<!-- 📸 FOTO RECOMANADA: Configuració de xarxa de TrueNAS i Proxmox amb Red Interna "xarxa_proxmox" -->
-<!-- Pàgina 11 del document – "2. Configuració de Xarxa" (les dues finestres de settings) -->
 
 Es defineix la topologia de **xarxa interna** anomenada `xarxa_proxmox` per connectar l'hypervisor i el NAS, aïllant el trànsit de dades de la xarxa domèstica.
 
@@ -243,15 +227,11 @@ Port:   enp0s9  (Red Interna de VirtualBox)
 
 **Pas 1 – Hardware per a RAID 1:**
 
-<!-- 📸 FOTO RECOMANADA: Configuració d'emmagatzematge de la VM TrueNAS amb els dos discs de 50GB -->
-<!-- Pàgina 14 del document – "PAS 1: Preparació del Hardware per a RAID 1" -->
 
 S'han afegit **dos discs virtuals de 50 GB** per implementar tolerància a fallades. En mode **Mirror (RAID 1)**, les dades es dupliquen simultàniament en ambdós discos.
 
 **Pas 2 – Instal·lació de TrueNAS SCALE:**
 
-<!-- 📸 FOTO RECOMANADA: Instal·lador de TrueNAS triant el disc de 32GB (sdb) com a destí -->
-<!-- Pàgina 13 del document – "PAS 3: Instal·lació del Sistema Operatiu TrueNAS" -->
 
 - **Disc SO:** `sdb` → 32 GiB (sistema operatiu TrueNAS)
 - **Disc Dades:** `sda` → 50 GiB (reservat per al pool ZFS)
@@ -354,8 +334,6 @@ En aquest apartat es crea una VM dins de Proxmox que utilitza **exclusivament el
 
 **Pas 9 – Font d'instal·lació remota:**
 
-<!-- 📸 FOTO RECOMANADA: Pantalla "Crear Màquina Virtual" a Proxmox amb Almacenamiento=NAS_Dades_ASIX i la ISO seleccionada -->
-<!-- Pàgina 22 del document – "PAS 9: Configuració de l'origen de la imatge de sistema" -->
 
 ```
 Emmagatzematge ISO: NAS_Dades_ASIX
@@ -365,8 +343,6 @@ SO Guest:           Linux 6.x - 2.6 Kernel
 
 **Pas 10 – Disc virtual al RAID 1:**
 
-<!-- 📸 FOTO RECOMANADA: Pestanya "Discos" de la creació de VM amb Almacenamiento=NAS_Dades_ASIX i mida 12GB -->
-<!-- Pàgina 22 del document – "PAS 10: Assignació del disc dur virtual al volum RAID 1" -->
 
 ```
 Controlador:    VirtIO SCSI
