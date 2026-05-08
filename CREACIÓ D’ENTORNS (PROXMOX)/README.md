@@ -21,7 +21,6 @@
 ![TrueNAS](https://img.shields.io/badge/TrueNAS-SCALE-0095D5?style=flat-square)
 ![ZFS](https://img.shields.io/badge/ZFS-RAID_1-silver?style=flat-square)
 ![NFS](https://img.shields.io/badge/NFS-actiu-blue?style=flat-square)
-![License](https://img.shields.io/badge/llicència-MIT-blue?style=flat-square)
 ![INS](https://img.shields.io/badge/INS_Sa_Palomera-ASIX_2-purple?style=flat-square)
 
 **Projecte Final de Curs 2025–2026 · ASIX – Administració de Sistemes Informàtics en Xarxa**
