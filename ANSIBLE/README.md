@@ -348,7 +348,7 @@ handlers:
 ansible-playbook /etc/ansible/setup_servidors.yml
 ```
 
-<!-- 📸 FOTO RECOMANADA: Sortida completa del PLAY RECAP amb ok/changed per node1 i node2 -->
+!-- ANSIBLE/IMG/Screenshot_1.png --
 <!-- Pàgina 10 del document – secció "7.1 Execució del Playbook" -->
 
 El resum final (`PLAY RECAP`) confirma l'execució correcta:
