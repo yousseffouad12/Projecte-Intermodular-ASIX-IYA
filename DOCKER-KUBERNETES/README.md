@@ -436,9 +436,9 @@ shopmicro/
 
 | Nom 
 |:---:
-🧑‍💻 | **Izan Ruiz** 
-🧑‍💻 | **Youssef Fouad**
-🧑‍💻 | **Adrià Rodríguez**
+|🧑‍💻 | **Izan Ruiz** 
+|🧑‍💻 | **Youssef Fouad**
+|🧑‍💻 | **Adrià Rodríguez**
 
 **INS Sa Palomera · ASIX – Projecte Final de Curs 2025–2026**
 
