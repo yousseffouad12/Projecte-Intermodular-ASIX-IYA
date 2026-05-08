@@ -46,26 +46,6 @@ L'**IYA_PROJECT** neix amb l'objectiu de dissenyar i implementar una infraestruc
 
 ---
 
-## 🏗️ Arquitectura del sistema
-
-```
-Internet (WAN)
-      │
-  ┌───┴────────────────┐
-  │  pfSense 2.7.2     │  ← Firewall / Router / NAT
-  │  + Suricata 7.0    │  ← IDS/IPS
-  └───┬────────────────┘
-      │ LAN (192.168.10.x/24)
-  ┌───┴────────────────────────────────────┐
-  │                                        │
-  ▼                                        ▼
-Proxmox VE                          Zabbix Server 7.0
-+ TrueNAS SCALE (NFS/ZFS)           + MariaDB + Apache
-+ Docker Swarm / Kubernetes         + Alertes Gmail / Jira
-```
-
----
-
 ## 🔧 Mòduls tècnics
 
 ### 1. Automatització amb Ansible
