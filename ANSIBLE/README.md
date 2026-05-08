@@ -134,19 +134,7 @@ ssh-copy-id alumne@192.168.1.51
 
 ### Pas 3 – Verificació de connectivitat
 
-```bash
-ansible all -m ping
-```
-
-<!-- 📸 FOTO RECOMANADA: Sortida del ping d'Ansible amb SUCCESS als dos nodes -->
-<!-- Pàgina 4 del document – secció "4. Gestió de paquets i connectivitat inicial" -->
-
-Resultat esperat:
-```
-node1 | SUCCESS => { "ping": "pong" }
-node2 | SUCCESS => { "ping": "pong" }
-```
-
+![Captura](IMG/Screenshot_2.png)
 ---
 
 ## 📁 Configuració tècnica
