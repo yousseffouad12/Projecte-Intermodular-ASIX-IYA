@@ -354,11 +354,7 @@ ansible-playbook /etc/ansible/setup_servidors.yml
 
 El resum final (`PLAY RECAP`) confirma l'execució correcta:
 
-```
-node1   : ok=12  changed=2  unreachable=0  failed=0  skipped=0
-node2   : ok=12  changed=2  unreachable=0  failed=0  skipped=0
-```
-
+![Captura](IMG/Screenshot_1.png)
 ---
 
 ### ✅ Verificació remota (node1 – 192.168.1.50)
