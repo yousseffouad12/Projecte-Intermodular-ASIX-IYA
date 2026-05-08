@@ -167,9 +167,6 @@ Llistes personalitzades actives: `facebook.com`, `tiktok.com`, `bet365.com`, `ro
 
 > **Regla d'or:** Activar totes les signatures simultàniament satura la CPU. Seleccionar només les categories rellevants per a l'entorn redueix dràsticament l'ús de recursos sense sacrificar cobertura real.
 
----
-
-##  Autors
 
 | Camp | Detall |
 |:---|:---|
