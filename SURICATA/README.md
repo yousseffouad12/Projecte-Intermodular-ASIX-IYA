@@ -178,23 +178,3 @@ Llistes personalitzades actives: `facebook.com`, `tiktok.com`, `bet365.com`, `ro
 | **Autors** | Youssef Fouad · Izan Ruiz · Adrià Rodríguez |
 | **Institut** | INS Sa Palomera |
 | **Curs** | 2025 – 2026 |
-
-
----
-
-##  Webgrafia i Referències Tècniques
-
-**Documentació oficial:**
-- [Netgate Docs — pfSense](https://docs.netgate.com)
-- [OISF Suricata — EVE JSON Format](https://suricata.readthedocs.io/en/latest/output/eve/eve-json-format.html)
-- [Emerging Threats Open Rules](https://rules.emergingthreats.net/open/)
-
-**Eines de pentesting (Kali Linux):**
-- [Nmap Reference Guide](https://nmap.org/book/man.html)
-- [THC-Hydra GitHub](https://github.com/vanhauser-thc/thc-hydra)
-- [sqlmap Project](https://sqlmap.org/)
-- [WAFW00F](https://github.com/EnableSecurity/wafw00f)
-
-**Sistemes complementaris:**
-- [Telegram Bot API](https://core.telegram.org)
-- [pfBlockerNG Forum](https://forum.netgate.com/category/62/pfblockerng)
