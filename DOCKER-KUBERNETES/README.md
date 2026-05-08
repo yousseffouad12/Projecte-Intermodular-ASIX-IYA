@@ -434,11 +434,11 @@ shopmicro/
 
 <div align="center">
 
-| | Nom | Rol |
-|:---:|:---:|:---:|
-| 🧑‍💻 | **Izan Ruiz** | Infraestructura i Orquestració |
-| 🧑‍💻 | **Youssef Fouad** | Backend, Seguretat i Kubernetes |
-| 🧑‍💻 | **Adrià Rodríguez** | Frontend, Networking i Documentació |
+| Nom 
+|:---:
+🧑‍💻 | **Izan Ruiz** 
+🧑‍💻 | **Youssef Fouad**
+🧑‍💻 | **Adrià Rodríguez**
 
 **INS Sa Palomera · ASIX – Projecte Final de Curs 2025–2026**
 
@@ -447,7 +447,5 @@ shopmicro/
 ---
 
 <div align="center">
-
-*Fet amb 🐳 Docker, ☸️ Kubernetes i molt de café.*
 
 </div>
