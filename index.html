@@ -2,430 +2,607 @@
 <html lang="ca">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Projecte Intermodular · ASIX 2025–2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Portfoli ASIX · INS Sa Palomera</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a0c10;
-  --bg2:#0f1117;
-  --bg3:#161b25;
-  --border:#1e2535;
-  --border2:#2a3349;
-  --text:#e8ecf4;
-  --muted:#7a8299;
-  --accent:#4f8ef7;
-  --accent2:#7c3aed;
-  --green:#10d679;
-  --amber:#f59e0b;
-  --coral:#f87171;
-  --teal:#2dd4bf;
-  --pink:#e879f9;
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── NOISE TEXTURE ── */
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4}
+  :root {
+    --bg:        #0d0f14;
+    --bg2:       #12151c;
+    --surface:   rgba(255,255,255,0.045);
+    --surface-h: rgba(255,255,255,0.085);
+    --border:    rgba(255,255,255,0.08);
+    --border-h:  rgba(255,255,255,0.18);
+    --accent:    #6c63ff;
+    --accent2:   #a78bfa;
+    --accent3:   #38bdf8;
+    --green:     #34d399;
+    --orange:    #fb923c;
+    --pink:      #f472b6;
+    --text:      #e2e8f0;
+    --muted:     #64748b;
+    --muted2:    #94a3b8;
+    --r:         20px;
+    --r2:        12px;
+    --shadow:    0 8px 32px rgba(0,0,0,.45);
+    --shadow-h:  0 20px 60px rgba(108,99,255,.22);
+    --blur:      blur(18px);
+  }
 
-/* ── HERO ── */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:6rem 2rem 4rem}
-.hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(79,142,247,.18) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 20% 80%,rgba(124,58,237,.12) 0%,transparent 60%),radial-gradient(ellipse 50% 35% at 80% 60%,rgba(16,214,121,.08) 0%,transparent 60%)}
-.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(79,142,247,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-.hero-inner{position:relative;z-index:1;max-width:900px}
-.badge-top{display:inline-flex;align-items:center;gap:8px;background:rgba(79,142,247,.1);border:1px solid rgba(79,142,247,.25);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--accent);margin-bottom:2rem;font-family:'JetBrains Mono',monospace}
-.badge-top span{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-h1{font-size:clamp(2.4rem,6vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem}
-h1 .gradient{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 40%,var(--pink) 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 2.5rem;line-height:1.7}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:3rem}
-.tag{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:6px 14px;font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--muted)}
-.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(79,142,247,.35)}
-.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2)}
-.btn-ghost:hover{background:var(--bg3);border-color:var(--accent)}
+  html { scroll-behavior: smooth; }
 
-/* ── SCROLL HINT ── */
-.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:11px;letter-spacing:.08em;z-index:1}
-.scroll-hint svg{animation:bounce .2s infinite alternate}
-@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(5px)}}
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
 
-/* ── SECTION ── */
-section{max-width:1200px;margin:0 auto;padding:6rem 2rem}
-.section-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:.75rem}
-.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1rem}
-.section-sub{color:var(--muted);font-size:1rem;max-width:560px;margin-bottom:3.5rem}
+  /* ── Background orbs ── */
+  .bg-orbs {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  }
+  .orb {
+    position: absolute; border-radius: 50%; filter: blur(100px); opacity: .18;
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  .orb1 { width: 600px; height: 600px; background: radial-gradient(circle, #6c63ff, transparent); top: -200px; left: -200px; }
+  .orb2 { width: 500px; height: 500px; background: radial-gradient(circle, #38bdf8, transparent); bottom: -150px; right: -100px; animation-delay: -6s; }
+  .orb3 { width: 400px; height: 400px; background: radial-gradient(circle, #f472b6, transparent); top: 40%; left: 55%; animation-delay: -12s; }
 
-/* ── STATS BAR ── */
-.stats{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.stats-inner{max-width:1200px;margin:0 auto;padding:2.5rem 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;text-align:center}
-.stat-n{font-size:2.2rem;font-weight:900;letter-spacing:-.04em;background:linear-gradient(135deg,var(--accent),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-l{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500}
+  @keyframes drift {
+    from { transform: translate(0,0) scale(1); }
+    to   { transform: translate(40px, 30px) scale(1.08); }
+  }
 
-/* ── PROJECT CARDS ── */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
-.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:2rem;position:relative;overflow:hidden;transition:all .3s;cursor:default}
-.pcard::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;border-radius:20px}
-.pcard:hover{border-color:var(--border2);transform:translateY(-4px)}
-.pcard:hover::before{opacity:1}
-.pcard.c1::before{background:radial-gradient(ellipse at top left,rgba(239,68,68,.06),transparent 60%)}
-.pcard.c2::before{background:radial-gradient(ellipse at top left,rgba(245,158,11,.06),transparent 60%)}
-.pcard.c3::before{background:radial-gradient(ellipse at top left,rgba(79,142,247,.06),transparent 60%)}
-.pcard.c4::before{background:radial-gradient(ellipse at top left,rgba(16,214,121,.06),transparent 60%)}
-.pcard.c5::before{background:radial-gradient(ellipse at top left,rgba(124,58,237,.06),transparent 60%)}
-.pcard-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:24px;position:relative;z-index:1}
-.ic1{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.2)}
-.ic2{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2)}
-.ic3{background:rgba(79,142,247,.12);border:1px solid rgba(79,142,247,.2)}
-.ic4{background:rgba(16,214,121,.12);border:1px solid rgba(16,214,121,.2)}
-.ic5{background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.2)}
-.pcard-num{position:absolute;top:1.5rem;right:1.5rem;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--border2);font-weight:700;letter-spacing:.08em}
-.pcard h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.01em;position:relative;z-index:1}
-.pcard p{font-size:.9rem;color:var(--muted);line-height:1.65;margin-bottom:1.25rem;position:relative;z-index:1}
-.pcard-stack{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
-.chip{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--muted);white-space:nowrap}
-.chip.hl{background:rgba(79,142,247,.08);border-color:rgba(79,142,247,.2);color:var(--accent)}
-.chip.hl2{background:rgba(16,214,121,.08);border-color:rgba(16,214,121,.2);color:var(--green)}
-.pcard-footer{margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:8px;position:relative;z-index:1}
-.status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
-.pcard-footer span{font-size:12px;color:var(--muted)}
+  /* ── Layout wrapper ── */
+  .wrapper { position: relative; z-index: 1; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
-/* ── TIMELINE ── */
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border2) 10%,var(--border2) 90%,transparent)}
-.titem{position:relative;padding:0 0 2.5rem 2.5rem}
-.titem:last-child{padding-bottom:0}
-.titem::before{content:'';position:absolute;left:-5px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--border2);transition:border-color .3s}
-.titem:hover::before{border-color:var(--accent)}
-.titem-phase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:4px}
-.titem h4{font-size:1rem;font-weight:600;margin-bottom:.4rem}
-.titem p{font-size:.88rem;color:var(--muted)}
+  /* ── Nav ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,15,20,.75);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+  }
+  .nav-inner {
+    max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: .8rem; font-weight: 700; letter-spacing: .12em;
+    color: var(--muted2); text-transform: uppercase;
+  }
+  .nav-logo span { color: var(--accent2); }
+  .nav-badge {
+    font-size: .72rem; font-weight: 600; letter-spacing: .08em;
+    color: var(--accent); background: rgba(108,99,255,.12);
+    border: 1px solid rgba(108,99,255,.28);
+    padding: 4px 12px; border-radius: 99px; text-transform: uppercase;
+  }
 
-/* ── TEAM ── */
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.member{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:2rem;text-align:center;transition:all .3s}
-.member:hover{border-color:var(--border2);transform:translateY(-3px)}
-.avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:900;letter-spacing:-.04em;position:relative}
-.av1{background:linear-gradient(135deg,#1d3a8a,#2563eb);color:#93c5fd}
-.av2{background:linear-gradient(135deg,#14532d,#16a34a);color:#86efac}
-.av3{background:linear-gradient(135deg,#581c87,#9333ea);color:#e9d5ff}
-.avatar::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;background:linear-gradient(135deg,rgba(79,142,247,.4),rgba(124,58,237,.4)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:destination-out;mask-composite:exclude}
-.member h3{font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
-.member .role{font-size:.82rem;color:var(--muted);margin-bottom:1rem}
-.member-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--accent);text-decoration:none;background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.2);border-radius:8px;padding:6px 14px;transition:all .2s}
-.member-link:hover{background:rgba(79,142,247,.16)}
-.member-link svg{width:12px;height:12px}
+  /* ── Hero ── */
+  .hero {
+    padding: 110px 0 80px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: .78rem; font-weight: 600; letter-spacing: .14em;
+    color: var(--accent2); text-transform: uppercase;
+    background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.22);
+    padding: 6px 16px; border-radius: 99px; margin-bottom: 32px;
+  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
 
-/* ── TECH CLOUD ── */
-.tech-grid{display:flex;flex-wrap:wrap;gap:10px}
-.tech-pill{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:8px 16px;font-size:13px;transition:border-color .2s}
-.tech-pill:hover{border-color:var(--border2)}
-.tech-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 800; line-height: 1.08; letter-spacing: -.03em;
+    margin-bottom: 22px;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(135deg, #a78bfa 0%, #6c63ff 40%, #38bdf8 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 1.1rem; color: var(--muted2); max-width: 560px; margin: 0 auto 48px;
+    font-weight: 400;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 2rem; font-weight: 800; color: var(--text); letter-spacing: -.02em; }
+  .stat-num span { font-size: 1.2rem; color: var(--accent2); }
+  .stat-label { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-top: 2px; }
 
-/* ── FOOTER ── */
-footer{background:var(--bg2);border-top:1px solid var(--border);text-align:center;padding:3rem 2rem}
-.footer-logo{font-size:.95rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.5rem}
-.footer-sub{font-size:.8rem;color:var(--muted)}
-.footer-badge{display:inline-flex;align-items:center;gap:8px;margin-top:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 18px;font-size:12px;color:var(--muted)}
+  /* ── Section title ── */
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-head h2 {
+    font-size: clamp(1.8rem,4vw,2.6rem); font-weight: 700; letter-spacing: -.025em;
+    margin-bottom: 12px;
+  }
+  .section-head p { color: var(--muted2); font-size: .98rem; }
+  .divider {
+    width: 48px; height: 3px; margin: 18px auto 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent3));
+    border-radius: 99px;
+  }
 
-/* ── DIVIDER ── */
-.divider{height:1px;background:linear-gradient(to right,transparent,var(--border) 30%,var(--border) 70%,transparent);max-width:1200px;margin:0 auto}
+  /* ── Grid ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    padding-bottom: 100px;
+  }
 
-/* ── ANIMATIONS ── */
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
-.fade-in.visible{opacity:1;transform:none}
+  /* ── Card ── */
+  .card {
+    background: var(--surface);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 20px;
+    box-shadow: var(--shadow);
+    transition: transform .35s cubic-bezier(.22,1,.36,1),
+                box-shadow .35s ease,
+                border-color .35s ease,
+                background .35s ease;
+    cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .card:hover {
+    transform: translateY(-8px) scale(1.012);
+    box-shadow: var(--shadow-h);
+    border-color: var(--border-h);
+    background: var(--surface-h);
+  }
+
+  /* card accent line */
+  .card-accent-line {
+    position: absolute; top: 0; left: 32px; right: 32px;
+    height: 2px; border-radius: 0 0 4px 4px;
+    opacity: 0;
+    transition: opacity .35s;
+  }
+  .card:hover .card-accent-line { opacity: 1; }
+
+  /* icon */
+  .card-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  }
+
+  /* badges row */
+  .card-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge {
+    font-size: .68rem; font-weight: 600; letter-spacing: .07em;
+    padding: 3px 10px; border-radius: 99px; text-transform: uppercase;
+    border: 1px solid transparent;
+  }
+
+  /* texts */
+  .card-title { font-size: 1.18rem; font-weight: 700; letter-spacing: -.015em; }
+  .card-desc  { font-size: .88rem; color: var(--muted2); line-height: 1.65; flex: 1; }
+
+  /* meta */
+  .card-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  .card-lines { font-size: .75rem; color: var(--muted); font-weight: 500; }
+  .card-lines strong { color: var(--text); }
+  .card-link {
+    font-size: .75rem; font-weight: 600; color: var(--accent2);
+    text-decoration: none; letter-spacing: .04em;
+    display: flex; align-items: center; gap: 4px;
+    transition: gap .2s, color .2s;
+  }
+  .card-link:hover { color: #fff; gap: 8px; }
+  .card-link::after { content: '→'; }
+
+  /* ── Colour themes per card ── */
+  /* 1: purple */
+  .c1 .card-icon { background: linear-gradient(135deg,#6c63ff,#a78bfa); }
+  .c1 .card-accent-line { background: linear-gradient(90deg,#6c63ff,#a78bfa); }
+  .c1 .badge-main { background: rgba(108,99,255,.15); color: #a78bfa; border-color: rgba(167,139,250,.25); }
+
+  /* 2: orange */
+  .c2 .card-icon { background: linear-gradient(135deg,#ea580c,#fb923c); }
+  .c2 .card-accent-line { background: linear-gradient(90deg,#ea580c,#fb923c); }
+  .c2 .badge-main { background: rgba(251,146,60,.12); color: #fb923c; border-color: rgba(251,146,60,.25); }
+
+  /* 3: cyan */
+  .c3 .card-icon { background: linear-gradient(135deg,#0284c7,#38bdf8); }
+  .c3 .card-accent-line { background: linear-gradient(90deg,#0284c7,#38bdf8); }
+  .c3 .badge-main { background: rgba(56,189,248,.12); color: #38bdf8; border-color: rgba(56,189,248,.25); }
+
+  /* 4: green */
+  .c4 .card-icon { background: linear-gradient(135deg,#059669,#34d399); }
+  .c4 .card-accent-line { background: linear-gradient(90deg,#059669,#34d399); }
+  .c4 .badge-main { background: rgba(52,211,153,.12); color: #34d399; border-color: rgba(52,211,153,.25); }
+
+  /* 5: pink */
+  .c5 .card-icon { background: linear-gradient(135deg,#be185d,#f472b6); }
+  .c5 .card-accent-line { background: linear-gradient(90deg,#be185d,#f472b6); }
+  .c5 .badge-main { background: rgba(244,114,182,.12); color: #f472b6; border-color: rgba(244,114,182,.25); }
+
+  /* 6: yellow */
+  .c6 .card-icon { background: linear-gradient(135deg,#d97706,#fbbf24); }
+  .c6 .card-accent-line { background: linear-gradient(90deg,#d97706,#fbbf24); }
+  .c6 .badge-main { background: rgba(251,191,36,.12); color: #fbbf24; border-color: rgba(251,191,36,.25); }
+
+  /* shared badge */
+  .badge-sec { background: rgba(255,255,255,.06); color: var(--muted2); border-color: var(--border); }
+
+  /* ── Tech strip ── */
+  .tech-strip {
+    margin-bottom: 80px;
+    overflow: hidden; position: relative;
+  }
+  .tech-strip::before, .tech-strip::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+  }
+  .tech-strip::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+  .tech-strip::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+
+  .strip-track {
+    display: flex; gap: 20px;
+    animation: scroll 28s linear infinite;
+    width: max-content;
+  }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .tech-strip:hover .strip-track { animation-play-state: paused; }
+
+  .tech-pill {
+    display: flex; align-items: center; gap: 8px;
+    font-size: .78rem; font-weight: 600; color: var(--muted2);
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 8px 18px; border-radius: 99px; white-space: nowrap;
+    letter-spacing: .05em; text-transform: uppercase;
+    transition: color .2s, border-color .2s;
+  }
+  .tech-pill:hover { color: var(--text); border-color: var(--border-h); }
+  .tech-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+    text-align: center;
+  }
+  .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+  .footer-link {
+    display: flex; align-items: center; gap: 8px;
+    font-size: .82rem; font-weight: 600; color: var(--muted2);
+    text-decoration: none; letter-spacing: .05em;
+    padding: 9px 20px; border-radius: 99px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    backdrop-filter: var(--blur);
+    transition: color .25s, border-color .25s, background .25s, transform .25s;
+  }
+  .footer-link:hover {
+    color: var(--text); border-color: var(--border-h);
+    background: var(--surface-h); transform: translateY(-2px);
+  }
+  .footer-copy { font-size: .74rem; color: var(--muted); }
+  .footer-copy a { color: var(--accent2); text-decoration: none; }
+
+  /* ── SVG icons inline ── */
+  .ico { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: #2a2d38; border-radius: 3px; }
+
+  /* ── Responsive ── */
+  @media(max-width:600px){
+    .hero { padding: 80px 0 60px; }
+    .hero-stats { gap: 32px; }
+    .grid { grid-template-columns: 1fr; }
+    .card { padding: 24px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
-<header class="hero">
-  <div class="hero-glow"></div>
-  <div class="grid-bg"></div>
-  <div class="hero-inner">
-    <div class="badge-top">
-      <span></span>
-      ASIX &nbsp;·&nbsp; INS Sa Palomera &nbsp;·&nbsp; 2025–2026
-    </div>
-    <h1>
-      Projecte<br/>
-      <span class="gradient">Intermodular</span>
-    </h1>
-    <p class="hero-sub">
-      Infraestructura real, tecnologia de producció. Cinc mòduls integrats per demostrar la maduresa tècnica del nostre cicle formatiu.
-    </p>
-    <div class="hero-tags">
-      <span class="tag">Ansible 9.2</span>
-      <span class="tag">Proxmox VE 9.1</span>
-      <span class="tag">Docker Swarm</span>
-      <span class="tag">Kubernetes</span>
-      <span class="tag">Suricata 7.0</span>
-      <span class="tag">pfSense 2.7.2</span>
-      <span class="tag">Zabbix 7.0</span>
-      <span class="tag">TrueNAS SCALE</span>
-    </div>
-    <div class="hero-cta">
-      <a href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" class="btn btn-primary">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        Repositori GitHub
-      </a>
-      <a href="#projectes" class="btn btn-ghost">Veure projectes ↓</a>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <span>SCROLL</span>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-  </div>
-</header>
-
-<!-- ══════════════════════════════ STATS ══════════════════════════════ -->
-<div class="stats">
-  <div class="stats-inner">
-    <div><div class="stat-n">5</div><div class="stat-l">Mòduls integrats</div></div>
-    <div><div class="stat-n">3</div><div class="stat-l">Integrants d'equip</div></div>
-    <div><div class="stat-n">12+</div><div class="stat-l">Tecnologies desplegades</div></div>
-    <div><div class="stat-n">100%</div><div class="stat-l">Flux validat E2E</div></div>
-    <div><div class="stat-n">IaC</div><div class="stat-l">Infrastructure as Code</div></div>
-  </div>
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
 </div>
 
-<!-- ══════════════════════════════ PROJECTES ══════════════════════════════ -->
-<section id="projectes" class="fade-in">
-  <div class="section-label">// Mòduls del projecte</div>
-  <h2 class="section-title">Cinc blocs. Un sistema.</h2>
-  <p class="section-sub">Cada mòdul és una peça d'un entorn professional complet, des de l'automatització fins al monitoratge actiu.</p>
-  <div class="projects-grid">
-
-    <div class="pcard c1">
-      <span class="pcard-num">01</span>
-      <div class="pcard-icon ic1">⚙️</div>
-      <h3>Automatització amb Ansible</h3>
-      <p>Entorn centralitzat d'automatització basat en Infrastructure as Code. Gestió de nodes remots sense agents via SSH, playbooks idempotents i quatre blocs d'aprovisionament complets.</p>
-      <div class="pcard-stack">
-        <span class="chip hl">Ansible 9.2</span>
-        <span class="chip">Ubuntu Server 24.04</span>
-        <span class="chip">Docker</span>
-        <span class="chip">Nginx</span>
-        <span class="chip">UFW</span>
-        <span class="chip">Fail2Ban</span>
-      </div>
-      <div class="pcard-footer">
-        <span class="status-dot"></span>
-        <span>2 nodes gestionats · Playbook complet</span>
-      </div>
-    </div>
-
-    <div class="pcard c2">
-      <span class="pcard-num">02</span>
-      <div class="pcard-icon ic2">🖥️</div>
-      <h3>Virtualització amb Proxmox</h3>
-      <p>Entorn de virtualització complet amb Proxmox VE i emmagatzematge redundant TrueNAS SCALE. RAID 1 via ZFS i compartició de recursos a través de NFS per a una protecció real de dades.</p>
-      <div class="pcard-stack">
-        <span class="chip hl2">Proxmox VE 9.1</span>
-        <span class="chip">TrueNAS SCALE</span>
-        <span class="chip">ZFS RAID 1</span>
-        <span class="chip">NFS</span>
-        <span class="chip">VirtualBox</span>
-      </div>
-      <div class="pcard-footer">
-        <span class="status-dot"></span>
-        <span>50 GiB Mirror · Pool_Projecte online</span>
-      </div>
-    </div>
-
-    <div class="pcard c3">
-      <span class="pcard-num">03</span>
-      <div class="pcard-icon ic3">🐳</div>
-      <h3>ShopMicro · Swarm & Kubernetes</h3>
-      <p>Plataforma d'e-commerce en microserveis desplegada en quatre fases: de Docker Compose a Kubernetes, passant per Docker Swarm amb alta disponibilitat i auditoria de seguretat amb Trivy.</p>
-      <div class="pcard-stack">
-        <span class="chip hl">Docker Swarm</span>
-        <span class="chip hl">Kubernetes</span>
-        <span class="chip">Minikube</span>
-        <span class="chip">Nginx</span>
-        <span class="chip">MySQL 8.0</span>
-        <span class="chip">PHP</span>
-        <span class="chip">Trivy</span>
-      </div>
-      <div class="pcard-footer">
-        <span class="status-dot"></span>
-        <span>3 rèpliques · Rolling updates · mTLS</span>
-      </div>
-    </div>
-
-    <div class="pcard c4">
-      <span class="pcard-num">04</span>
-      <div class="pcard-icon ic4">🛡️</div>
-      <h3>IDS/IPS Suricata + pfSense</h3>
-      <p>Sistema de detecció i prevenció d'intrusions sobre pfSense. DPI en temps real, regles ET Open personalitzades, pentesting complet amb Kali Linux i notificacions crítiques via Telegram.</p>
-      <div class="pcard-stack">
-        <span class="chip hl2">Suricata 7.0.8</span>
-        <span class="chip">pfSense 2.7.2</span>
-        <span class="chip">ET Open Rules</span>
-        <span class="chip">Kali Linux</span>
-        <span class="chip">pfBlockerNG</span>
-        <span class="chip">Telegram API</span>
-      </div>
-      <div class="pcard-footer">
-        <span class="status-dot"></span>
-        <span>Mode IPS actiu · 7 vectors validats</span>
-      </div>
-    </div>
-
-    <div class="pcard c5">
-      <span class="pcard-num">05</span>
-      <div class="pcard-icon ic5">📊</div>
-      <h3>Monitoratge amb Zabbix</h3>
-      <p>Plataforma integral de monitoratge sobre tota la infraestructura. Triggers automàtics, integració Gmail + Jira Service Management, informes setmanals en PDF i validació E2E del flux d'incidents.</p>
-      <div class="pcard-stack">
-        <span class="chip" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#c084fc">Zabbix 7.0</span>
-        <span class="chip">Debian 12</span>
-        <span class="chip">MariaDB</span>
-        <span class="chip">SNMP v2c</span>
-        <span class="chip">Jira Cloud</span>
-        <span class="chip">Gmail SMTP</span>
-      </div>
-      <div class="pcard-footer">
-        <span class="status-dot"></span>
-        <span>100% flux incident validat · Informes SLA</span>
-      </div>
-    </div>
-
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">INS <span>Sa Palomera</span> · ASIX</div>
+    <div class="nav-badge">Curs 2025–2026</div>
   </div>
-</section>
+</nav>
 
-<div class="divider"></div>
+<!-- HERO -->
+<div class="wrapper">
+  <section class="hero">
+    <div class="hero-eyebrow">Projecte Intermodular</div>
+    <h1>
+      Infraestructura.<br>
+      <span class="grad">Automatitzada.</span>
+    </h1>
+    <p>
+      Sis projectes d'administració de sistemes construïts amb eines reals,
+      desplegats en entorns de laboratori i documentats amb precisió professional.
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Projectes</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">~1k<span></span></div>
+        <div class="stat-label">Línies de codi</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3<span></span></div>
+        <div class="stat-label">Desenvolupadors</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Validat</div>
+      </div>
+    </div>
+  </section>
 
-<!-- ══════════════════════════════ TIMELINE ══════════════════════════════ -->
-<section class="fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
-  <div>
-    <div class="section-label">// Fases del projecte</div>
-    <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem)">De zero a producció</h2>
-    <p class="section-sub" style="margin-bottom:0;font-size:.9rem">Cada fase construeix sobre l'anterior per crear un entorn professional complet i cohesionat.</p>
+  <!-- TECH STRIP -->
+  <div class="tech-strip">
+    <div class="strip-track" id="strip"></div>
   </div>
-  <div class="timeline">
-    <div class="titem">
-      <div class="titem-phase">Fase 01</div>
-      <h4>Infraestructura base</h4>
-      <p>Configuració de nodes, xarxes internes i automatització amb Ansible. Primer pas cap al model IaC.</p>
-    </div>
-    <div class="titem">
-      <div class="titem-phase">Fase 02</div>
-      <h4>Virtualització i emmagatzematge</h4>
-      <p>Proxmox VE amb TrueNAS en RAID 1. Redundància real i provisió de VMs via NFS remot.</p>
-    </div>
-    <div class="titem">
-      <div class="titem-phase">Fase 03</div>
-      <h4>Microserveis i orquestració</h4>
-      <p>ShopMicro de Docker Compose fins a Kubernetes. Alta disponibilitat, secrets i auditoria de seguretat.</p>
-    </div>
-    <div class="titem">
-      <div class="titem-phase">Fase 04</div>
-      <h4>Seguretat perimetral</h4>
-      <p>IDS/IPS actiu amb Suricata sobre pfSense. Pentesting real i resposta automatitzada a incidents.</p>
-    </div>
-    <div class="titem">
-      <div class="titem-phase">Fase 05</div>
-      <h4>Monitoratge i alerting E2E</h4>
-      <p>Zabbix integrat amb Jira i Gmail. Detecció proactiva de fallades i traçabilitat completa d'incidents.</p>
-    </div>
-  </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- ══════════════════════════════ TECNOLOGIES ══════════════════════════════ -->
-<section class="fade-in">
-  <div class="section-label">// Stack tecnològic</div>
-  <h2 class="section-title">Totes les eines</h2>
-  <p class="section-sub">Tecnologies de codi obert i estàndard de la indústria, tal com s'utilitzen en entorns professionals reals.</p>
-  <div class="tech-grid">
-    <div class="tech-pill"><span class="tech-dot" style="background:#ef4444"></span>Ansible 9.2</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#e57000"></span>Proxmox VE 9.1</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#0095d5"></span>TrueNAS SCALE</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#c0c0c0"></span>ZFS RAID 1</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#2496ed"></span>Docker Swarm</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#326ce5"></span>Kubernetes (Minikube)</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#009639"></span>Nginx</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#4479a1"></span>MySQL 8.0</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#777bb4"></span>PHP</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#ffcc00"></span>Suricata 7.0.8</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#ff4444"></span>pfSense 2.7.2</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#8844ff"></span>ET Open Rules</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#cc0000"></span>Zabbix 7.0</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#003366"></span>Debian 12</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#ea4c89"></span>MariaDB</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#0052cc"></span>Jira Service Mgmt</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#ea4335"></span>Gmail SMTP</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#2ca5e0"></span>Telegram API</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#e46702"></span>Ubuntu Server 24.04</div>
-    <div class="tech-pill"><span class="tech-dot" style="background:#10b981"></span>UFW · Fail2Ban</div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══════════════════════════════ EQUIP ══════════════════════════════ -->
-<section id="equip" class="fade-in">
-  <div class="section-label">// L'equip</div>
-  <h2 class="section-title">Tres sistemes. Un equip.</h2>
-  <p class="section-sub">Estudiants de 2n curs d'ASIX a l'INS Sa Palomera, responsables de la planificació, disseny, implementació i documentació del projecte.</p>
-  <div class="team-grid">
-
-    <div class="member">
-      <div class="avatar av1">IR</div>
-      <h3>Izan Ruiz Pérez</h3>
-      <div class="role">Administració de Sistemes · ASIX 2</div>
-      <a class="member-link" href="https://izaanruiz.github.io/Portfoli/" target="_blank">
-        Portfoli
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
+  <!-- PROJECTS -->
+  <section>
+    <div class="section-head">
+      <h2>Projectes Desplegats</h2>
+      <p>Cada targeta representa un mòdul complet, amb arquitectura, codi i validació.</p>
+      <div class="divider"></div>
     </div>
 
-    <div class="member">
-      <div class="avatar av2">YF</div>
-      <h3>Youssef Fouad Mabrouki</h3>
-      <div class="role">Administració de Sistemes · ASIX 2</div>
-      <a class="member-link" href="https://yousseffouad12.github.io/youssef_cv/" target="_blank">
-        Portfoli
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
+    <div class="grid">
+
+      <!-- 1: Ansible -->
+      <div class="card c1">
+        <div class="card-accent-line"></div>
+        <div class="card-icon">⚙️</div>
+        <div class="card-badges">
+          <span class="badge badge-main">Ansible</span>
+          <span class="badge badge-sec">IaC</span>
+          <span class="badge badge-sec">SSH</span>
+          <span class="badge badge-sec">UFW</span>
+        </div>
+        <div class="card-title">AnsibleCore – Automatització de Servidors</div>
+        <div class="card-desc">
+          Entorn d'Infrastructure as Code basat en Ansible 9.2 que gestiona de forma centralitzada
+          i desatesa dos nodes Ubuntu via SSH amb claus RSA de 4096 bits. El playbook YAML idempotent
+          de ~180 línies orquestra quatre blocs lògics: aprovisionament de grups i usuaris, hardening
+          SSH i firewall UFW, desplegament de Docker i Nginx, i manteniment automatitzat amb cron.
+          Execució verificada amb <em>PLAY RECAP ok=12 failed=0</em> als dos nodes.
+        </div>
+        <div class="card-meta">
+          <div class="card-lines">~<strong>180</strong> línies de YAML</div>
+          <a class="card-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <!-- 2: Proxmox -->
+      <div class="card c2">
+        <div class="card-accent-line"></div>
+        <div class="card-icon">🖥️</div>
+        <div class="card-badges">
+          <span class="badge badge-main">Proxmox VE</span>
+          <span class="badge badge-sec">TrueNAS</span>
+          <span class="badge badge-sec">RAID 1</span>
+          <span class="badge badge-sec">NFS</span>
+        </div>
+        <div class="card-title">ProxStack – Virtualització Empresarial</div>
+        <div class="card-desc">
+          Entorn de virtualització complet sobre Proxmox VE 9.1 integrat amb un servidor d'emmagatzematge
+          TrueNAS SCALE amb redundància ZFS en mode Mirror (RAID 1). La infraestructura de xarxa en doble
+          interfície separa el trànsit de gestió del canal NFS privat (10.0.0.0/24). Les VMs aprovisionades
+          utilitzen exclusivament el pool remot <em>Pool_Projecte</em> (47 GiB útils) com a disc principal,
+          garantint protecció de dades fins i tot davant la fallada de l'hypervisor.
+        </div>
+        <div class="card-meta">
+          <div class="card-lines">~<strong>150</strong> línies de config</div>
+          <a class="card-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <!-- 3: Docker Swarm + K8s -->
+      <div class="card c3">
+        <div class="card-accent-line"></div>
+        <div class="card-icon">🐳</div>
+        <div class="card-badges">
+          <span class="badge badge-main">Kubernetes</span>
+          <span class="badge badge-sec">Docker Swarm</span>
+          <span class="badge badge-sec">Nginx</span>
+          <span class="badge badge-sec">MySQL 8</span>
+        </div>
+        <div class="card-title">ShopMicro – Orquestració de Microserveis</div>
+        <div class="card-desc">
+          Plataforma d'e-commerce en microserveis evolució en 4 fases: Docker Compose amb SSL/TLS,
+          Docker Swarm amb 3 nodes, overlay networks i sticky sessions via <em>ip_hash</em>, auditoria
+          de seguretat amb Trivy (CVE-2025-68121) i Docker Secrets, i migració final a Kubernetes
+          amb Minikube, PersistentVolumeClaim, liveness/readiness probes i rolling updates sense
+          downtime. El backend PHP amb BCRYPT i gestió transaccional d'stock completa el sistema.
+        </div>
+        <div class="card-meta">
+          <div class="card-lines">~<strong>320</strong> línies (YAML + PHP)</div>
+          <a class="card-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <!-- 4: Suricata / IDS/IPS -->
+      <div class="card c4">
+        <div class="card-accent-line"></div>
+        <div class="card-icon">🛡️</div>
+        <div class="card-badges">
+          <span class="badge badge-main">Suricata</span>
+          <span class="badge badge-sec">pfSense</span>
+          <span class="badge badge-sec">IDS/IPS</span>
+          <span class="badge badge-sec">Kali</span>
+        </div>
+        <div class="card-title">SentinelFW – Sistema de Detecció d'Intrusions</div>
+        <div class="card-desc">
+          Implementació d'un IDS/IPS en mode actiu sobre pfSense 2.7.2 amb Suricata 7.0.8 i signatures
+          Emerging Threats Open. El motor realitza Deep Packet Inspection i insereix IPs atacants a la
+          taula de bloqueig <em>pf</em> en temps real (timeout: 3h). Pentesting exhaustiu des de Kali Linux
+          amb Nmap, Hydra, sqlmap i hping3, tant a LAN com a WAN. Notificacions crítiques via bot de Telegram
+          (cURL) i pfBlockerNG per filtrat DNS de dominis maliciosos.
+        </div>
+        <div class="card-meta">
+          <div class="card-lines">~<strong>210</strong> línies (rules + scripts)</div>
+          <a class="card-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <!-- 5: Zabbix -->
+      <div class="card c5">
+        <div class="card-accent-line"></div>
+        <div class="card-icon">📊</div>
+        <div class="card-badges">
+          <span class="badge badge-main">Zabbix 7.0</span>
+          <span class="badge badge-sec">SNMP</span>
+          <span class="badge badge-sec">Jira</span>
+          <span class="badge badge-sec">MariaDB</span>
+        </div>
+        <div class="card-title">OpsWatch – Monitoratge i Alerting Proactiu</div>
+        <div class="card-desc">
+          Plataforma de monitoratge centralitzat Zabbix 7.0 LTS sobre Debian 12 que supervisa pfSense
+          i Suricata via SNMP v2c i SSH amb clau RSA. Triggers configurats per CPU, RAM, disc, DNS i DHCP
+          amb gravetat jeràrquica. El flux end-to-end Zabbix → Gmail SMTP → Jira Service Management
+          crea tiquets automàticament i els tanca en resolució, amb informes PDF setmanals automàtics
+          cada dilluns a les 09:00h. Validació completa del cicle en 3 min 42 s documentada.
+        </div>
+        <div class="card-meta">
+          <div class="card-lines">~<strong>190</strong> línies (SQL + Bash)</div>
+          <a class="card-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <!-- 6: Extra – GitOps/CI -->
+      <div class="card c6">
+        <div class="card-accent-line"></div>
+        <div class="card-icon">🔄</div>
+        <div class="card-badges">
+          <span class="badge badge-main">GitOps</span>
+          <span class="badge badge-sec">CI/CD</span>
+          <span class="badge badge-sec">GitHub Pages</span>
+          <span class="badge badge-sec">Markdown</span>
+        </div>
+        <div class="card-title">DevFlow – Documentació i Integració Contínua</div>
+        <div class="card-desc">
+          Pipeline de documentació viva i publicació automàtica per als cinc projectes anteriors.
+          Cada repositori inclou un README tècnic estructurat amb diagrames ASCII, taules comparatives
+          i referències creuades. GitHub Pages serveix aquest portfoli com a punt d'entrada únic al
+          projecte intermodular. El fluxe GitOps garanteix que documentació i codi evolucionin
+          sincronitzats, eliminant la bretxa entre implementació i comunicació tècnica.
+        </div>
+        <div class="card-meta">
+          <div class="card-lines">~<strong>160</strong> línies (HTML + CSS)</div>
+          <a class="card-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
     </div>
+  </section>
+</div>
 
-    <div class="member">
-      <div class="avatar av3">AR</div>
-      <h3>Adrià Rodríguez Estrella</h3>
-      <div class="role">Administració de Sistemes · ASIX 2</div>
-      <a class="member-link" href="https://adriiiii.github.io/cv-estrella/" target="_blank">
-        Portfoli
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Projecte Intermodular · ASIX 2025–2026</div>
-  <div class="footer-sub">INS Sa Palomera · Cicle Formatiu de Grau Superior</div>
-  <div style="margin-top:1rem">
-    <a href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" class="footer-badge">
-      <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-      yousseffouad12 / Projecte-Intermodular-ASIX-IYA
-    </a>
+  <div class="wrapper">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a class="footer-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">
+          <!-- GitHub icon -->
+          <svg class="ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          Repositori GitHub
+        </a>
+        <a class="footer-link" href="https://github.com/yousseffouad12" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          Youssef Fouad
+        </a>
+        <a class="footer-link" href="https://github.com/yousseffouad12/Projecte-Intermodular-ASIX-IYA" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          INS Sa Palomera
+        </a>
+      </div>
+      <div class="footer-copy">
+        Fet amb 💜 per <a href="https://github.com/yousseffouad12" target="_blank" rel="noopener">Izan Ruiz · Youssef Fouad · Adrià Rodríguez</a>
+        &nbsp;·&nbsp; ASIX 2025–2026
+      </div>
+    </div>
   </div>
-  <div style="margin-top:2rem;font-size:11px;color:#3a4260">Distribuït sota llicència MIT · Curs 2025–2026</div>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+  /* ── Tech strip builder ── */
+  const techs = [
+    { name:'Ansible 9.2',     dot:'#a78bfa' },
+    { name:'Proxmox VE 9.1',  dot:'#fb923c' },
+    { name:'TrueNAS SCALE',   dot:'#38bdf8' },
+    { name:'Docker Swarm',    dot:'#38bdf8' },
+    { name:'Kubernetes',      dot:'#60a5fa' },
+    { name:'Suricata 7.0',    dot:'#34d399' },
+    { name:'pfSense 2.7.2',   dot:'#34d399' },
+    { name:'Zabbix 7.0',      dot:'#f472b6' },
+    { name:'Ubuntu 24.04',    dot:'#fb923c' },
+    { name:'MariaDB 10.11',   dot:'#a78bfa' },
+    { name:'Nginx',           dot:'#34d399' },
+    { name:'PHP 8.2',         dot:'#60a5fa' },
+    { name:'MySQL 8.0',       dot:'#38bdf8' },
+    { name:'ZFS RAID 1',      dot:'#fb923c' },
+    { name:'Fail2Ban',        dot:'#f472b6' },
+    { name:'UFW Firewall',    dot:'#a78bfa' },
+    { name:'Trivy',           dot:'#34d399' },
+    { name:'Jira SM',         dot:'#60a5fa' },
+    { name:'Telegram API',    dot:'#38bdf8' },
+    { name:'EVE JSON',        dot:'#fbbf24' },
+    { name:'ET Open Rules',   dot:'#f472b6' },
+    { name:'Docker Secrets',  dot:'#a78bfa' },
+    { name:'SNMP v2c',        dot:'#34d399' },
+    { name:'GitHub Actions',  dot:'#fb923c' },
+  ];
+
+  const strip = document.getElementById('strip');
+  // duplicate for infinite scroll
+  [...techs, ...techs].forEach(t => {
+    const el = document.createElement('div');
+    el.className = 'tech-pill';
+    el.innerHTML = `<span class="tech-dot" style="background:${t.dot};box-shadow:0 0 6px ${t.dot}88"></span>${t.name}`;
+    strip.appendChild(el);
+  });
 </script>
 </body>
 </html>
