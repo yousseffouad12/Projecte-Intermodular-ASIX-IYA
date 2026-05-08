@@ -14,7 +14,7 @@
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
 ```
 
-### `Proxmox VE 9.1` · `TrueNAS SCALE` · `ZFS` · `RAID 1` · `NFS` · `KVM` · `VirtualBox`
+### `Proxmox VE 9.1` · `TrueNAS SCALE` · `RAID 1` · `NFS` · `VirtualBox`
 
 ![Status](https://img.shields.io/badge/estat-actiu-brightgreen?style=flat-square)
 ![Proxmox](https://img.shields.io/badge/Proxmox_VE-9.1-E57000?style=flat-square&logo=proxmox)
