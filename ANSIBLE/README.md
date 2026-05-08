@@ -348,8 +348,6 @@ handlers:
 ansible-playbook /etc/ansible/setup_servidors.yml
 ```
 
-![Captura](IMG/Screenshot_1.png)
-
 <!-- Pàgina 10 del document – secció "7.1 Execució del Playbook" -->
 
 El resum final (`PLAY RECAP`) confirma l'execució correcta:
