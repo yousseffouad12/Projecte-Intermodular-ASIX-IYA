@@ -425,11 +425,11 @@ sudo crontab -l
 
 <div align="center">
 
-| | Nom | Rol |
-|---|---|---|
-| 👤 | **Izan Ruiz** | Configuració Ansible & Playbooks |
-| 👤 | **Youssef Fouad** | Seguretat & Hardening |
-| 👤 | **Adrià Rodríguez** | Infraestructura & Validació |
+| | Nom |
+|---|---|
+| 👤 | **Izan Ruiz**
+| 👤 | **Youssef Fouad**
+| 👤 | **Adrià Rodríguez**
 
 **INS Sa Palomera · ASIX · Projecte Final de Curs 2025–2026**
 
