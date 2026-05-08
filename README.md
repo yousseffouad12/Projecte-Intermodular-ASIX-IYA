@@ -1,130 +1,113 @@
-# 🖥️ IYA PROJECT – ASIX
-### Projecte Intermodular Final · INS Sa Palomera · Curs 2025–2026
+<div align="center">
 
-> Infraestructura robusta, escalable i segura dissenyada i implementada per estudiants de 2n curs d'ASIX.
+# IYA PROJECT
 
----
+### Administració de Sistemes Informàtics en Xarxa
+**INS Sa Palomera · Blanes, Girona · Curs 2025–2026**
 
-## 👥 Equip
+[![Estado](https://img.shields.io/badge/estat-en%20desenvolupament-yellow?style=flat-square)](.)
+[![Cicle](https://img.shields.io/badge/cicle-ASIX%20Grau%20Superior-blue?style=flat-square)](.)
+[![Llicència](https://img.shields.io/badge/llicència-acadèmica-lightgrey?style=flat-square)](.)
 
-| Membre | Rol | Portfoli |
-|--------|-----|---------|
-| **Izan Ruiz Pérez** | Sistemes & Virtualització | [izaanruiz.github.io/Portfoli](https://izaanruiz.github.io/Portfoli/) |
-| **Youssef Fouad Mabrouki** | Seguretat & Monitorització | [yousseffouad12.github.io/youssef_cv](https://yousseffouad12.github.io/youssef_cv/) |
-| **Adrià Rodríguez Estrella** | Contenidors & Automatització | [adriiiii.github.io/cv-estrella](https://adriiiii.github.io/cv-estrella/) |
-
-**Tutors:** Francesc Barragan · José Moreno · Joan Pou · Isaac Pulí · Josep Catà
+</div>
 
 ---
 
-## 📋 Descripció del projecte
+## Sobre el projecte
 
-L'**IYA_PROJECT** neix amb l'objectiu de dissenyar i implementar una infraestructura de sistemes i xarxes **robusta, escalable i segura**. El projecte demostra la integració de tecnologies d'orquestració de contenidors, sistemes de detecció d'intrusos (IDS/IPS) i monitorització avançada, tot gestionat amb metodologia Agile.
+L'**IYA_PROJECT** és el projecte final integrador del Cicle Formatiu de Grau Superior d'ASIX. L'objectiu és dissenyar, implementar i documentar una infraestructura de sistemes i xarxes **robusta, escalable i segura**, integrant les principals tecnologies del sector: virtualització, orquestració de contenidors, ciberseguretat perimetral, automatització i monitorització avançada.
 
-### Àrees d'actuació
-
-- 🖥️ **Virtualització** – Entorn Proxmox VE amb emmagatzematge TrueNAS (ZFS/RAID 1)
-- 🐳 **Orquestració** – Clústers Docker Swarm i Kubernetes (Minikube)
-- 🛡️ **Ciberseguretat** – IDS/IPS amb Suricata integrat a pfSense
-- 📊 **Monitorització** – Supervisió centralitzada amb Zabbix 7.0 via SNMP
-- ⚙️ **Automatització** – Desplegament d'infraestructura amb Ansible
+Tot el projecte s'ha gestionat amb **metodologia Agile (Scrum)**, fent servir Jira per al seguiment de tasques i GitHub com a eix central de codi i documentació.
 
 ---
 
-## 🚀 Estat del projecte
+## Equip
 
-> 🟡 **En desenvolupament** · Data d'entrega: 08 de Maig del 2026
+<table>
+  <tr>
+    <td align="center">
+      <b>Izan Ruiz Pérez</b><br/>
+      <a href="https://izaanruiz.github.io/Portfoli/">🌐 Portfoli</a>
+    </td>
+    <td align="center">
+      <b>Youssef Fouad Mabrouki</b><br/>
+      <a href="https://yousseffouad12.github.io/youssef_cv/">🌐 Portfoli</a>
+    </td>
+    <td align="center">
+      <b>Adrià Rodríguez Estrella</b><br/>
+      <a href="https://adriiiii.github.io/cv-estrella/">🌐 Portfoli</a>
+    </td>
+  </tr>
+</table>
 
-### Sprints (Metodologia Agile)
+> **Tutors:** Francesc Barragan · José Moreno · Joan Pou · Isaac Pulí · Josep Catà
+
+---
+
+## Mòduls del projecte
+
+### ⚙️ Automatització amb Ansible
+Desplegament complet de la infraestructura mitjançant Playbooks YAML. S'han automatitzat la gestió d'usuaris, el hardening del sistema (UFW), la instal·lació de Docker i el desplegament d'Nginx. Validat el principi d'idempotència en entorn multi-node.
+
+### 🖥️ Entorn virtual amb Proxmox
+Implementació d'un hipervisor Proxmox VE connectat a un servidor d'emmagatzematge TrueNAS SCALE. El pool de dades utilitza ZFS en mode Mirror (RAID 1) per garantir la tolerància a fallades. La comunicació entre serveis es realitza via NFS sobre xarxa interna dedicada.
+
+### 🛡️ Sistema IDS/IPS amb Suricata
+Infraestructura de defensa profunda integrada a pfSense. Suricata opera en **Mode IPS Inline** amb Inspecció Profunda de Paquets (DPI) i regles ET Open (Emerging Threats). S'ha implementat un sistema d'alertes automàtiques via **bot de Telegram** (format EVE JSON). Complement de filtratge DNS amb pfBlockerNG.
+
+**Proves de penetració superades:**
+- Nmap Null/Xmas Scan → detectat i bloquejat
+- SQL Injection via sqlmap → tallat en mil·lisegons
+- Notificació Telegram en menys d'1 segon post-atac
+
+### 🐳 Orquestració amb Docker Swarm i Kubernetes
+Aplicació d'e-commerce (`SHOPmicro PRO`) en PHP + MySQL desplegada en microserveis. Evolució des de Docker Compose fins a un clúster Swarm (1 Manager + 2 Workers) i posterior migració a Kubernetes amb Minikube. S'han validat alta disponibilitat, escalat en calent i auditoria d'imatges amb **Trivy**.
+
+### 📊 Monitorització amb Zabbix
+Sistema de monitorització centralitzat amb Zabbix 7.0 sobre Debian 12 + MariaDB. Recollida de mètriques via **SNMP v2c** des de pfSense sense necessitat d'agents. Triggers configurats amb llindar sostigut (CPU > 85% durant 5 min). Integració amb **Gmail SMTP** i **Jira Service Management** per a la generació automàtica de tiquets d'incidència.
+
+---
+
+## Tecnologies
+
+| Àrea | Stack |
+|------|-------|
+| Virtualització | Proxmox VE · TrueNAS SCALE · ZFS · VirtualBox |
+| Contenidors | Docker · Docker Swarm · Kubernetes · Minikube |
+| Seguretat | pfSense · Suricata · pfBlockerNG · Kali Linux |
+| Automatització | Ansible · YAML · SSH |
+| Monitorització | Zabbix 7.0 · SNMP · MariaDB · Apache |
+| Gestió | Jira · GitHub · Google Drive |
+| Notificacions | Telegram Bot API · Gmail SMTP |
+
+---
+
+## Planificació
 
 | Sprint | Objectiu | Estat |
 |--------|----------|-------|
-| **Sprint 1** – Preparació | Base documental i repositoris | ✅ Completat |
-| **Sprint 2** – Core | Hipervisor, clúster i automatització | ✅ Completat |
-| **Sprint 3** – Serveis | IDS/IPS i monitorització | ✅ Completat |
-| **Sprint 4** – Tancament | Memòria tècnica i validació | 🔄 En procés |
+| Sprint 1 – Preparació | Base documental, repositoris i plantilles | ✅ Completat |
+| Sprint 2 – Core | Hipervisor, clúster de contenidors i automatització | ✅ Completat |
+| Sprint 3 – Serveis | IDS/IPS i monitorització de xarxa | ✅ Completat |
+| Sprint 4 – Tancament | Memòria tècnica i validació final | 🔄 En procés |
 
 ---
 
-## 🔧 Mòduls tècnics
+## Enllaços
 
-### 1. Automatització amb Ansible
-- Arquitectura **Agentless** (SSH + claus públiques)
-- Playbooks YAML: creació d'usuaris, hardening UFW, desplegament de Docker i Nginx
-- Validació d'**idempotència** (`changed=0` en segona execució)
-- Ports oberts: `22/tcp`, `80/tcp`, `443/tcp`
-
-### 2. Entorn virtual Proxmox
-- **Hipervisor:** Proxmox VE (basat en Debian, llicència GPL)
-- **Emmagatzematge:** TrueNAS SCALE amb pool en Mirror RAID 1 (2× 50 GiB)
-- **Xarxa segmentada:** Host-Only (gestió), Xarxa interna (NFS), NAT (internet)
-- Compartició de recursos via **NFS** (IP interna `10.0.0.2`)
-
-### 3. IDS/IPS amb Suricata
-- Motor **multithreading** amb Inspecció Profunda de Paquets (DPI)
-- Mode **IPS Inline** via driver Netmap
-- Regles actives: `ET Open (Emerging Threats)` – Scan, Web Server, Malware
-- Alertes en temps real via **bot de Telegram** (format EVE JSON)
-- Complement: **pfBlockerNG** per filtratge DNS/dominis de phishing
-
-**Proves de penetració superades:**
-- ✅ Nmap Null/Xmas Scan → bloquejat
-- ✅ SQL Injection (sqlmap) → tallat en mil·lisegons
-- ✅ Notificació Telegram en < 1 segon
-
-### 4. Docker Swarm i Kubernetes
-- Aplicació d'**e-commerce** en PHP + MySQL (`SHOPmicro PRO`)
-- Seguretat: **BCRYPT** per contrasenyes, **HTTPS** amb Nginx com a Proxy Invers
-- Docker Swarm: 1 Manager + 2 Workers, fitxer `docker-stack.yml`
-- Kubernetes: Minikube amb PVC, readiness/liveness probes, NodePort
-- Auditoria d'imatges amb **Trivy**
-
-### 5. Monitorització Zabbix
-- Servidor **Zabbix 7.0** sobre Debian 12 + MariaDB
-- Recollida via **SNMP v2c** des de pfSense (sense agents externs)
-- Triggers: alerta si CPU > 85% durant 5 minuts sostiguts
-- Integració: **Gmail SMTP** → **Jira Service Management** (tiquets automàtics)
-- Detecció de caiguda de serveis en **< 60 segons**
+| Recurs | Enllaç |
+|--------|--------|
+| Codi font | [GitHub](#) |
+| Gestió de tasques | [Jira](#) |
+| Documentació | [Google Drive](#) |
+| Projecte Docker | [Veure](#) |
+| Automatització | [Veure](#) |
+| Sistema de detecció | [Veure](#) |
+| Monitorització | [Veure](#) |
+| Entorn virtual | [Veure](#) |
 
 ---
 
-## 🛠️ Eines i tecnologies
-
-| Categoria | Eines |
-|-----------|-------|
-| Gestió de projecte | Jira (Agile), GitHub, Google Drive |
-| Virtualització | Proxmox VE, TrueNAS SCALE, VirtualBox |
-| Contenidors | Docker, Docker Swarm, Kubernetes (Minikube) |
-| Seguretat | pfSense, Suricata, pfBlockerNG, Wazuh |
-| Automatització | Ansible, YAML Playbooks |
-| Monitorització | Zabbix 7.0, SNMP, MariaDB |
-| Pentesting | Kali Linux, Nmap, sqlmap, Trivy |
-| Notificacions | Telegram Bot API, Gmail SMTP |
-
----
-
-## 🔗 Enllaços del projecte
-
-- 📁 [GitHub](#)
-- 📋 [Jira](#)
-- 📂 [Drive](#)
-- 🐳 [Projecte Docker](#)
-- ⚙️ [Automatització de la configuració](#)
-- 🛡️ [Implementació del sistema de detecció](#)
-- 📊 [Monitorització de xarxa](#)
-- 🖥️ [Creació d'entorn virtual](#)
-
----
-
-## 📚 Informació acadèmica
-
-| Camp | Detall |
-|------|--------|
-| Cicle | Grau Superior – ASIX |
-| Centre | Institut Sa Palomera |
-| Població | Blanes, Girona |
-| Curs | 2025–2026 |
-
----
-
-*IYA Project · INS Sa Palomera · ASIX 2025–2026*
+<div align="center">
+  <sub>IYA Project · INS Sa Palomera · ASIX 2025–2026</sub>
+</div>
