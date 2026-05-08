@@ -162,8 +162,7 @@ DNS Server           : 8.8.8.8
 
 ### Pas 3 – Accés a la interfície de gestió
 
-<!-- 📸 FOTO RECOMANADA: Terminal VirtualBox mostrant la URL https://192.168.56.100:8006/ -->
-<!-- Pàgina 9 del document – "PAS 3: Accés a la interfície de gestió" -->
+![Captura](IMG/Screenshot_3.png)
 
 Un cop instal·lat, Proxmox indica la URL d'accés:
 
@@ -171,8 +170,7 @@ Un cop instal·lat, Proxmox indica la URL d'accés:
 https://192.168.56.100:8006/
 ```
 
-<!-- 📸 FOTO RECOMANADA: Pantalla de login web de Proxmox VE al navegador -->
-<!-- Pàgina 10 del document – captura del login web de Proxmox -->
+![Captura](IMG/Screenshot_4.png)
 
 Accedim via **HTTPS** amb l'usuari `root` i verifiquem que el panell de control és accessible. ✅
 
@@ -202,8 +200,7 @@ Es defineix la topologia de **xarxa interna** anomenada `xarxa_proxmox` per conn
 
 **Pas 1 – Bridge vmbr1 a Proxmox:**
 
-<!-- 📸 FOTO RECOMANADA: Creació del bridge vmbr1 (10.0.0.1/24) a la interfície de xarxa de Proxmox -->
-<!-- Pàgina 12 del document – "PAS 1: Creació del Bridge vmbr1 a Proxmox" -->
+![Captura](IMG/Screenshot_5.png)
 
 ```
 Bridge: vmbr1
@@ -213,8 +210,7 @@ Port:   enp0s9  (Red Interna de VirtualBox)
 
 **Pas 2 – Configuració aplicada:**
 
-<!-- 📸 FOTO RECOMANADA: Taula de xarxes de Proxmox amb vmbr0 (192.168.56.100) i vmbr1 (10.0.0.1) actius -->
-<!-- Pàgina 12 del document – "PAS 2: Aplicar la configuració a Proxmox" -->
+![Captura](IMG/Screenshot_6.png)
 
 | Bridge | CIDR | Funció |
 |---|---|---|
@@ -238,8 +234,7 @@ S'han afegit **dos discs virtuals de 50 GB** per implementar tolerància a falla
 
 **Pas 3 – IP interna del TrueNAS:**
 
-<!-- 📸 FOTO RECOMANADA: Interfícies de xarxa del TrueNAS (terminal) mostrant enp0s8 10.0.0.2/24 -->
-<!-- Pàgina 13 del document – "PAS 4: Configuració de la IP Interna al TrueNAS" -->
+![Captura](IMG/Screenshot_7.png)
 
 ```
 enp0s8 → 10.0.0.2/24   (Red Interna – NFS)
@@ -248,8 +243,7 @@ enp0s9 → 192.168.56.101/24  (Host-Only – Web)
 
 **Verificació de connectivitat:**
 
-<!-- 📸 FOTO RECOMANADA: Ping des de Proxmox a 10.0.0.2 amb 0% packet loss -->
-<!-- Pàgina 13 del document – "PAS 5: Prova de Verificació (El Ping)" -->
+![Captura](IMG/Screenshot_8.png)
 
 ```bash
 root@pve:~# ping 10.0.0.2
@@ -260,8 +254,7 @@ root@pve:~# ping 10.0.0.2
 
 **Pas 4 – Creació del Pool RAID 1 (TrueNAS Web):**
 
-<!-- 📸 FOTO RECOMANADA: Storage Dashboard de TrueNAS amb Pool_Projecte en mode MIRROR (2 discs 50GB) -->
-<!-- Pàgina 15 del document – "PAS 3: Creació del RAID 1 a la Web" -->
+![Captura](IMG/Screenshot_18.png)
 
 S'ha creat el pool `Pool_Projecte` en mode **Mirror (RAID 1)**:
 
@@ -275,8 +268,7 @@ Cap. útil: 47.48 GiB
 
 **Pas 5 – Compartició NFS:**
 
-<!-- 📸 FOTO RECOMANADA: Panell Shares de TrueNAS amb UNIX (NFS) Shares "RUNNING" i path dades_proxmox -->
-<!-- Pàgina 18 del document – captura "UNIX (NFS) Shares RUNNING" -->
+![Captura](IMG/Screenshot_10.png)
 
 1. Creem el dataset `dades_proxmox` dins del `Pool_Projecte`
 2. Afegim un **NFS Share** apuntant a `/mnt/Pool_Projecte/dades_proxmox`
@@ -294,8 +286,8 @@ Estat:   RUNNING ✅
 
 **Connexió NFS a Proxmox:**
 
-<!-- 📸 FOTO RECOMANADA: Formulari "Agregar NFS" a Proxmox amb ID=NAS_Dades_ASIX, Servidor=10.0.0.2 -->
-<!-- Pàgina 18 del document – "PAS 5: Connectar-ho al Proxmox" (formulari Agregar NFS) -->
+![Captura](IMG/Screenshot_11.png)
+
 
 Des del **Datacenter → Almacenamiento → Agregar → NFS**:
 
@@ -308,18 +300,18 @@ Contingut: Imatges ISO, Discs VM, Backups
 
 > ⚠️ **Error de permisos resolt:** S'ha hagut de configurar el `Maproot User = root` a les opcions avançades del share NFS de TrueNAS per permetre que Proxmox tingui permisos d'escriptura sobre el dataset.
 
-<!-- 📸 FOTO RECOMANADA: Arbre del Datacenter de Proxmox amb NAS_Dades_ASIX visible i correctament afegit -->
-<!-- Pàgina 20 del document – captura "Centro de datos" amb NAS_Dades_ASIX llistat -->
+![Captura](IMG/Screenshot_12.png)
+
 
 **Càrrega d'ISO al volum ZFS:**
 
-<!-- 📸 FOTO RECOMANADA: Diàleg de càrrega d'ISO a Proxmox amb ubuntu-22.04.5-desktop-amd64.iso (4.44 GiB) -->
-<!-- Pàgina 21 del document – "PAS 7: Càrrega de dades cap al volum ZFS del TrueNAS" -->
+![Captura](IMG/Screenshot_13.png)
+
 
 S'ha carregat la ISO `ubuntu-22.04.5-desktop-amd64.iso` (4.44 GiB) al recurs NFS `NAS_Dades_ASIX` per verificar permisos de lectura/escriptura.
 
-<!-- 📸 FOTO RECOMANADA: Task viewer "TASK OK" confirmant que la ISO s'ha copiat correctament al NAS -->
-<!-- Pàgina 21 del document – "PAS 8: Verificació de la persistència del fitxer al RAID 1" -->
+![Captura](IMG/Screenshot_14.png)
+
 
 ```
 finished file import successfully
@@ -355,19 +347,19 @@ Format:         QCOW2
 
 **Resolució d'errors:**
 
-<!-- 📸 FOTO RECOMANADA: Opcions de la VM amb "Virtualización de hardware KVM" desactivada -->
-<!-- Pàgina 24 del document – captura de les opcions amb KVM desactivat -->
+![Captura](IMG/Screenshot_15.png)
+
 
 Per executar la VM sobre VirtualBox (virtualització nested), cal desactivar la virtualització KVM:
 `Opcions → Virtualización de hardware KVM → Desactivat`
 
 **Resultat final:**
 
-<!-- 📸 FOTO RECOMANADA: Escriptori d'Ubuntu funcionant a la consola de Proxmox (VM 100) -->
-<!-- Pàgina 27 del document – captura final amb Ubuntu Desktop en marxa -->
+![Captura](IMG/Screenshot_16.png)
 
-<!-- 📸 FOTO RECOMANADA: Storage Dashboard de TrueNAS amb 21.2% d'ús al Pool_Projecte (10.08 GiB usats) -->
-<!-- Pàgina 28 del document – "PAS 12: Execució i arrencada de la màquina virtual" -->
+
+![Captura](IMG/Screenshot_17.png)
+
 
 El dashboard de **TrueNAS** confirma la integració completa del sistema:
 
