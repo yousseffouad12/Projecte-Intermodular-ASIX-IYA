@@ -122,8 +122,7 @@ Per establir la comunicació entre el mestre i els nodes gestionats, s'ha creat 
 ssh-keygen -t rsa -b 4096
 ```
 
-<!-- 📸 FOTO RECOMANADA: Terminal amb la generació de la clau RSA i el randomart -->
-<!-- Pàgina 5 del document – secció "5. Fase de connectivitat i seguretat SSH" -->
+![Captura](IMG/Screenshot_4.png)
 
 ### Pas 2 – Distribució de claus als nodes
 
@@ -131,6 +130,7 @@ ssh-keygen -t rsa -b 4096
 ssh-copy-id alumne@192.168.1.50
 ssh-copy-id alumne@192.168.1.51
 ```
+![Captura](IMG/Screenshot_5.png)
 
 ### Pas 3 – Verificació de connectivitat
 
@@ -143,8 +143,6 @@ ssh-copy-id alumne@192.168.1.51
 
 L'inventari és el fitxer central on es defineixen i organitzen els nodes gestionats. Permet agrupar servidors i assignar-los variables de connexió específiques per a una gestió totalment **desatesa**.
 
-<!-- 📸 FOTO RECOMANADA: Contingut del fitxer /etc/ansible/hosts al nano -->
-<!-- Pàgina 6 del document – secció "6.1 Inventari" -->
 
 ```ini
 [servidors]
@@ -181,8 +179,6 @@ El nostre playbook s'estructura en **quatre blocs lògics**:
 
 Prepara la infraestructura base de tots els nodes:
 
-<!-- 📸 FOTO RECOMANADA: Codi YAML del bloc A (Aprovisionament) al nano/editor -->
-<!-- Pàgina 7 del document – captura del playbook secció A -->
 
 ```yaml
 # Crear grup de seguretat
@@ -229,8 +225,6 @@ Prepara la infraestructura base de tots els nodes:
 
 Aplica polítiques restrictives per blindar els nodes davant accessos no autoritzats:
 
-<!-- 📸 FOTO RECOMANADA: Codi YAML del bloc B (Seguretat/UFW/Hardening SSH) al nano -->
-<!-- Pàgina 7-8 del document – captura del playbook secció B -->
 
 ```yaml
 # Configurar UFW (ports SSH i HTTP)
@@ -267,8 +261,6 @@ Aplica polítiques restrictives per blindar els nodes davant accessos no autorit
 
 Automatitza la posada en marxa dels serveis d'aplicació:
 
-<!-- 📸 FOTO RECOMANADA: Codi YAML del bloc C (Docker + Nginx) al nano/editor -->
-<!-- Pàgina 8-9 del document – captura del playbook secció C -->
 
 ```yaml
 # Instal·lar Docker
@@ -300,8 +292,7 @@ Automatitza la posada en marxa dels serveis d'aplicació:
 
 Garanteix l'estabilitat del sistema i automatitza les tasques repetitives:
 
-<!-- 📸 FOTO RECOMANADA: Codi YAML del bloc D (Cron + Handlers) al nano/editor -->
-<!-- Pàgina 9 del document – captura del playbook secció D -->
+
 
 ```yaml
 # Tasca Cron de neteja diària
@@ -355,9 +346,8 @@ id gestor_asix
 ls -ld /opt/projecte_asix
 # drwxr-xr-x 2 gestor_asix admins_projecte 4096 ...
 ```
-
-<!-- 📸 FOTO RECOMANADA: Sortida dels comandos id gestor_asix i ls -ld /opt/projecte_asix -->
-<!-- Pàgina 11 del document – secció "7.2 Verificació remota" -->
+![Captura](IMG/Screenshot_6.png)
+![Captura](IMG/Screenshot_7.png)
 
 **Estat del Firewall (UFW):**
 ```bash
@@ -365,8 +355,7 @@ sudo ufw status
 # Status: active  →  22/tcp ALLOW, 80/tcp ALLOW
 ```
 
-<!-- 📸 FOTO RECOMANADA: Sortida de sudo ufw status amb els ports autoritzats -->
-<!-- Pàgina 11 del document – secció "7.2 Verificació remota" -->
+![Captura](IMG/Screenshot_8.png)
 
 **Serveis Docker i Nginx:**
 ```bash
@@ -375,8 +364,7 @@ sudo systemctl status docker nginx
 # nginx.service:  active (running)
 ```
 
-<!-- 📸 FOTO RECOMANADA: Sortida de systemctl status docker nginx amb els dos serveis en verd -->
-<!-- Pàgina 11 del document – secció "7.2 Verificació remota" -->
+![Captura](IMG/Screenshot_9.png)
 
 **Landing Page desplegada:**
 ```bash
@@ -384,14 +372,14 @@ curl localhost
 # <h1>Servidor ASIX gestionat per Ansible</h1>
 ```
 
-<!-- 📸 FOTO RECOMANADA: Navegador mostrant "Servidor ASIX gestionat per Ansible" a http://192.168.1.50 -->
-<!-- Pàgina 12 del document – secció "7.2 Verificació remota" -->
+![Captura](IMG/Screenshot_10.png)
 
 **Hardening SSH:**
 ```bash
 grep "PermitRootLogin" /etc/ssh/sshd_config
 # PermitRootLogin no
 ```
+![Captura](IMG/Screenshot_11.png)
 
 **Cron de manteniment:**
 ```bash
@@ -399,8 +387,7 @@ sudo crontab -l
 # 0 2 * * * rm -rf /tmp/*
 ```
 
-<!-- 📸 FOTO RECOMANADA: Sortida de sudo crontab -l amb les tasques d'Ansible registrades -->
-<!-- Pàgina 12 del document – secció "7.2 Verificació remota" -->
+![Captura](IMG/Screenshot_12.png)
 
 ---
 
